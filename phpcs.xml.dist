@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<ruleset name="WORKONITY">
+	<description>WordPress.org-focused coding standards for WORKONITY.</description>
+
+	<file>.</file>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<config name="testVersion" value="7.4-"/>
+
+	<rule ref="WordPress">
+		<!--
+			WORKONITY stores operational HR data in custom workonity_* tables.
+			Table identifiers are generated internally through WORKONITY_Schema::table().
+			Runtime values remain sanitized/prepared where accepted by wpdb.
+		-->
+		<exclude name="WordPress.DB.DirectDatabaseQuery.DirectQuery"/>
+		<exclude name="WordPress.DB.DirectDatabaseQuery.NoCaching"/>
+		<exclude name="WordPress.DB.PreparedSQL.InterpolatedNotPrepared"/>
+		<exclude name="WordPress.DB.PreparedSQL.NotPrepared"/>
+		<exclude name="WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare"/>
+		<exclude name="WordPress.DB.DirectDatabaseQuery.SchemaChange"/>
+
+		<!-- Review-facing checks remain enabled; these style/doc sniffs are tracked separately. -->
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment"/>
+		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
+		<exclude name="Squiz.Commenting.FunctionComment.Missing"/>
+		<exclude name="Squiz.Commenting.VariableComment.Missing"/>
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
+		<exclude name="Universal.Operators.DisallowShortTernary.Found"/>
+		<exclude name="WordPress.DateTime.RestrictedFunctions.date_date"/>
+		<exclude name="WordPress.DateTime.CurrentTimeTimestamp.Requested"/>
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found"/>
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed"/>
+		<exclude name="Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition"/>
+		<exclude name="Squiz.Operators.IncrementDecrementUsage.NoBrackets"/>
+		<exclude name="Universal.NamingConventions.NoReservedKeywordParameterNames.defaultFound"/>
+		<exclude name="Universal.NamingConventions.NoReservedKeywordParameterNames.newFound"/>
+		<exclude name="Universal.NamingConventions.NoReservedKeywordParameterNames.publicFound"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+		<!-- Deliberate: the one-time migrator reconstructs retired tokens without shipping the literal identifiers. -->
+		<exclude name="Generic.Strings.UnnecessaryStringConcat.Found"/>
+	</rule>
+
+	<rule ref="WordPress.WP.Capabilities">
+		<properties>
+			<property name="custom_capabilities" type="array">
+				<element value="workonity_access_dashboard"/>
+				<element value="workonity_manage_all"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- A WordPress plugin bootstrap must use the plugin slug, not a class-* filename. -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>*/workonity-pro.php</exclude-pattern>
+	</rule>
+</ruleset>

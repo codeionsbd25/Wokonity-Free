@@ -1,0 +1,4106 @@
+:root {
+  --workonity-primary: #155eef;
+  --workonity-secondary: #071a3d;
+  --workonity-bg: #f6f8fb;
+  --workonity-card: #fff;
+  --workonity-text: #111827;
+  --workonity-muted: #6b7280;
+  --workonity-border: #e5e7eb;
+  --workonity-radius: 20px;
+  --workonity-shadow: 0 18px 50px rgba(7, 26, 61, .08)
+}
+
+#workonity-root,
+.workonity-root {
+  width: 100%;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  color: var(--workonity-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: clip
+}
+
+#workonity-root *,
+#workonity-root *::before,
+#workonity-root *::after,
+.workonity-root *,
+.workonity-root *::before,
+.workonity-root *::after {
+  box-sizing: border-box
+}
+
+.entry-content #workonity-root,
+.wp-site-blocks #workonity-root {
+  width: min(1500px, calc(100vw - 32px));
+  max-width: min(1500px, calc(100vw - 32px)) !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0
+}
+
+.wrap #workonity-root {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0
+}
+
+.workonity-app {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  min-height: 760px;
+  background: var(--workonity-bg);
+  border: 1px solid var(--workonity-border);
+  border-radius: 28px;
+  padding: 22px;
+  box-sizing: border-box;
+  overflow: visible;
+  isolation: isolate
+}
+
+.workonity-sidebar {
+  background: linear-gradient(180deg, var(--workonity-sidebar-bg, var(--workonity-secondary)), color-mix(in srgb, var(--workonity-sidebar-bg, var(--workonity-secondary)) 86%, #000));
+  color: var(--workonity-sidebar-text, #fff);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+  height: calc(100vh - 40px);
+  max-height: calc(100vh - 40px);
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  box-shadow: var(--workonity-shadow)
+}
+
+.workonity-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--workonity-sidebar-text, #fff);
+  padding: 6px 4px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12)
+}
+
+.workonity-brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--workonity-primary);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .2)
+}
+
+.workonity-brand strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.2
+}
+
+.workonity-brand span {
+  display: block;
+  color: rgba(255, 255, 255, .65);
+  font-size: 12px;
+  margin-top: 2px
+}
+
+.workonity-sidebar nav {
+  display: grid;
+  gap: 7px;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  padding: 12px 8px 18px 0;
+  scroll-padding-block: 12px;
+  scrollbar-gutter: stable
+}
+
+.workonity-sidebar nav::-webkit-scrollbar {
+  width: 5px
+}
+
+.workonity-sidebar nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .25);
+  border-radius: 999px
+}
+
+.workonity-sidebar nav button:last-child {
+  margin-bottom: 8px
+}
+
+.workonity-sidebar nav button.active {
+  scroll-margin-block: 12px
+}
+
+.workonity-sidebar button:focus,
+.workonity-sidebar button:focus-visible {
+  outline: 0 !important;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .92) !important
+}
+
+.workonity-sidebar button {
+  border: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--workonity-sidebar-text, #fff) 78%, transparent);
+  text-align: left;
+  padding: 11px 13px;
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 14px !important;
+  line-height: 1.2;
+  transition: .18s ease
+}
+
+.workonity-sidebar button:hover,
+.workonity-sidebar button.active {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  transform: translateX(2px)
+}
+
+.workonity-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px
+}
+
+.workonity-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: var(--workonity-card);
+  border: 1px solid var(--workonity-border);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: var(--workonity-shadow)
+}
+
+.workonity-topbar h1 {
+  margin: 0 !important;
+  font-size: clamp(22px, 3vw, 32px) !important;
+  line-height: 1.1
+}
+
+.workonity-topbar p,
+.workonity-panel p {
+  margin: 6px 0 0;
+  color: var(--workonity-muted);
+  font-size: 14px
+}
+
+.workonity-user-pill {
+  background: #f3f4f6;
+  border: 1px solid var(--workonity-border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+  min-width: 0;
+  max-width: 48%;
+  box-sizing: border-box
+}
+
+.workonity-user-pill span {
+  font-size: 12px;
+  color: var(--workonity-muted);
+  flex: 0 0 auto
+}
+
+.workonity-user-pill strong {
+  font-size: 13px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.workonity-view {
+  min-width: 0
+}
+
+.workonity-grid {
+  display: grid;
+  gap: 18px
+}
+
+.workonity-stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 22px
+}
+
+.workonity-two-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
+.workonity-card,
+.workonity-panel {
+  background: var(--workonity-card);
+  border: 1px solid var(--workonity-border);
+  border-radius: var(--workonity-radius);
+  box-shadow: var(--workonity-shadow);
+  box-sizing: border-box
+}
+
+.workonity-card {
+  padding: 22px;
+  min-width: 0
+}
+
+.workonity-card-title {
+  color: var(--workonity-muted);
+  font-size: 13px;
+  font-weight: 750
+}
+
+.workonity-card-value {
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.1;
+  font-weight: 850;
+  margin-top: 8px;
+  color: var(--workonity-secondary)
+}
+
+.workonity-card-note {
+  font-size: 12px;
+  color: var(--workonity-muted);
+  margin-top: 8px
+}
+
+.workonity-panel {
+  padding: 24px;
+  margin-bottom: 22px;
+  min-width: 0;
+  overflow: hidden
+}
+
+.workonity-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px
+}
+
+.workonity-panel-head h2 {
+  font-size: 21px !important;
+  line-height: 1.25 !important;
+  margin: 0 !important
+}
+
+.workonity-panel-actions,
+.workonity-actions,
+.workonity-mini-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.workonity-mini-actions {
+  gap: 6px
+}
+
+.workonity-mini-actions button,
+.workonity-link-btn {
+  border: 0;
+  background: #eef2ff;
+  color: #1d4ed8;
+  border-radius: 10px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-weight: 700
+}
+
+.workonity-mini-actions button:hover,
+.workonity-link-btn:hover {
+  background: #dbeafe
+}
+
+.workonity-btn {
+  border: 0 !important;
+  background: var(--workonity-primary) !important;
+  color: #fff !important;
+  border-radius: 13px !important;
+  padding: 11px 16px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  box-shadow: 0 12px 22px rgba(21, 94, 239, .22) !important;
+  line-height: 1.2 !important;
+  min-height: 42px
+}
+
+.workonity-btn:hover {
+  filter: brightness(.95)
+}
+
+.workonity-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed
+}
+
+.workonity-btn-secondary {
+  background: #111827 !important;
+  box-shadow: none !important
+}
+
+.workonity-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px
+}
+
+.workonity-form-grid-wide {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+}
+
+.workonity-form-grid-compact {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+}
+
+.workonity-form-grid-single {
+  grid-template-columns: 1fr
+}
+
+.workonity-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0
+}
+
+.workonity-field>span {
+  font-weight: 750;
+  font-size: 13px;
+  color: #1f2937
+}
+
+.workonity-field em {
+  color: #ef4444;
+  font-style: normal;
+  margin-left: 3px
+}
+
+.workonity-field input,
+.workonity-field select,
+.workonity-field textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--workonity-border) !important;
+  background: #fff !important;
+  color: var(--workonity-text) !important;
+  border-radius: 13px !important;
+  padding: 11px 12px !important;
+  min-height: 44px !important;
+  font-size: 14px !important;
+  box-shadow: none !important
+}
+
+.workonity-field textarea {
+  min-height: 95px !important;
+  resize: vertical
+}
+
+.workonity-field small,
+.workonity-check small {
+  display: block;
+  color: var(--workonity-muted);
+  font-size: 12px;
+  margin-top: 3px
+}
+
+.workonity-field-span {
+  grid-column: 1/-1
+}
+
+.workonity-color-field {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 8px
+}
+
+.workonity-color-field input[type=color] {
+  padding: 3px !important
+}
+
+.workonity-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 13px;
+  background: #fff;
+  line-height: 1.3
+}
+
+.workonity-check input {
+  margin-top: 3px
+}
+
+.workonity-check span {
+  font-weight: 700
+}
+
+.workonity-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  margin: 0 0 18px
+}
+
+.workonity-weekdays {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px
+}
+
+.workonity-subpanel {
+  border: 1px dashed var(--workonity-border);
+  border-radius: 18px;
+  padding: 16px;
+  margin: 4px 0 18px;
+  background: #fbfdff
+}
+
+.workonity-subpanel h3 {
+  margin: 0 0 4px !important
+}
+
+.workonity-chip-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px
+}
+
+.workonity-chip {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-weight: 700;
+  font-size: 12px
+}
+
+.workonity-chip button {
+  border: 0;
+  background: transparent;
+  color: #166534;
+  cursor: pointer;
+  font-weight: 900
+}
+
+.workonity-table-card {
+  border: 1px solid var(--workonity-border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff
+}
+
+.workonity-table-wrap {
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch
+}
+
+.workonity-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  margin: 0 !important
+}
+
+.workonity-table th,
+.workonity-table td {
+  padding: 13px 14px !important;
+  border-bottom: 1px solid var(--workonity-border) !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  font-size: 13px !important
+}
+
+.workonity-table th {
+  background: #f9fafb;
+  color: #4b5563;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-weight: 850
+}
+
+.workonity-table tr:last-child td {
+  border-bottom: 0 !important
+}
+
+.workonity-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: capitalize;
+  background: #f3f4f6;
+  color: #374151;
+  white-space: nowrap
+}
+
+.workonity-status-present,
+.workonity-status-approved,
+.workonity-status-active,
+.workonity-status-published {
+  background: #dcfce7;
+  color: #166534
+}
+
+.workonity-status-late,
+.workonity-status-pending,
+.workonity-status-pending_correction,
+.workonity-status-missing_clock_out {
+  background: #fef3c7;
+  color: #92400e
+}
+
+.workonity-status-rejected,
+.workonity-status-terminated,
+.workonity-status-suspended,
+.workonity-status-deleted {
+  background: #fee2e2;
+  color: #991b1b
+}
+
+.workonity-status-half_day,
+.workonity-status-early_leave,
+.workonity-status-draft {
+  background: #dbeafe;
+  color: #1d4ed8
+}
+
+.workonity-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--workonity-muted)
+}
+
+.workonity-empty strong {
+  color: var(--workonity-text)
+}
+
+.workonity-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px
+}
+
+.workonity-profile-grid>div {
+  background: #f9fafb;
+  border: 1px solid var(--workonity-border);
+  border-radius: 15px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px
+}
+
+.workonity-profile-grid strong {
+  font-size: 12px;
+  color: var(--workonity-muted)
+}
+
+.workonity-profile-grid span {
+  font-weight: 750
+}
+
+.workonity-clean-list {
+  margin: 0 !important;
+  padding-left: 19px !important;
+  color: #374151
+}
+
+.workonity-clean-list li {
+  margin: 5px 0
+}
+
+.workonity-clock-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: 22px;
+  align-items: start
+}
+
+.workonity-clock-status {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px
+}
+
+.workonity-clock-status>span {
+  font-weight: 750;
+  color: var(--workonity-muted)
+}
+
+.workonity-clock-box {
+  background: #f9fafb;
+  border: 1px solid var(--workonity-border);
+  border-radius: 18px;
+  padding: 18px
+}
+
+.workonity-selfie-capture {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--workonity-primary) 25%, var(--workonity-border));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--workonity-primary) 4%, var(--workonity-card))
+}
+
+.workonity-selfie-capture-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.workonity-selfie-capture-head strong {
+  display: block;
+  color: var(--workonity-text);
+  font-size: 14px
+}
+
+.workonity-selfie-capture-head p,
+.workonity-camera-fallback p {
+  margin: 4px 0 0;
+  color: var(--workonity-muted);
+  font-size: 12px;
+  line-height: 1.45
+}
+
+.workonity-camera-stage,
+.workonity-selfie-preview {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: 220px;
+  border-radius: 14px;
+  background: #020617;
+  place-items: center
+}
+
+.workonity-camera-stage video,
+.workonity-selfie-preview img {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transform: scaleX(-1)
+}
+
+.workonity-selfie-preview img {
+  transform: none
+}
+
+.workonity-camera-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  padding: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 750;
+  place-items: center;
+  text-align: center;
+  background: rgba(2, 6, 23, .62)
+}
+
+.workonity-camera-capture {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 16px;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .24)
+}
+
+.workonity-camera-capture:hover,
+.workonity-camera-capture:focus-visible {
+  background: #dbeafe;
+  outline: 0
+}
+
+.workonity-selfie-preview .workonity-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: auto
+}
+
+.workonity-camera-fallback {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa
+}
+
+.workonity-verification-list {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 16px
+}
+
+.workonity-verification-list span {
+  font-size: 11px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 5px 8px;
+  text-transform: capitalize
+}
+
+.workonity-verification-list span.enabled {
+  background: #dcfce7;
+  color: #166534
+}
+
+.workonity-two-col {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 22px
+}
+
+.workonity-permission-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  max-height: 640px;
+  overflow: auto;
+  padding-right: 4px
+}
+
+.workonity-permission-group {
+  border: 1px solid var(--workonity-border);
+  border-radius: 16px;
+  padding: 13px;
+  background: #f9fafb
+}
+
+.workonity-permission-group h3 {
+  text-transform: capitalize;
+  margin: 0 0 10px !important;
+  font-size: 15px !important
+}
+
+.workonity-org-dept {
+  margin: 20px 0
+}
+
+.workonity-org-dept h3 {
+  margin: 0 0 12px !important
+}
+
+.workonity-org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px
+}
+
+.workonity-org-card {
+  background: #fff;
+  border: 1px solid var(--workonity-border);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start
+}
+
+.workonity-org-card img,
+.workonity-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--workonity-primary), #16a34a);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 24px
+}
+
+.workonity-org-card strong {
+  font-size: 16px
+}
+
+.workonity-org-card span {
+  color: #374151;
+  font-weight: 700
+}
+
+.workonity-org-card small {
+  color: var(--workonity-muted);
+  word-break: break-all
+}
+
+.workonity-org-card em {
+  font-size: 12px;
+  color: var(--workonity-muted);
+  font-style: normal
+}
+
+.workonity-loading,
+.workonity-error,
+.workonity-error-panel {
+  padding: 24px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--workonity-border);
+  box-shadow: var(--workonity-shadow)
+}
+
+.workonity-error,
+.workonity-error-panel {
+  border-color: #fecaca;
+  color: #991b1b;
+  background: #fff7f7
+}
+
+.workonity-auth-box {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 28px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--workonity-shadow)
+}
+
+.workonity-toast-region {
+  position: fixed;
+  z-index: 999999;
+  top: 28px;
+  right: 24px;
+  display: grid;
+  gap: 10px;
+  width: min(390px, calc(100vw - 32px));
+  pointer-events: none
+}
+
+.workonity-toast {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 12px;
+  padding: 13px 13px 13px 15px;
+  border: 1px solid var(--workonity-border);
+  border-left-width: 5px;
+  border-radius: 16px;
+  background: #fff;
+  color: #111827;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, .18);
+  opacity: 0;
+  transform: translateY(-8px) scale(.98);
+  transition: .18s ease
+}
+
+.workonity-toast-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1)
+}
+
+.workonity-toast span {
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em
+}
+
+.workonity-toast p {
+  grid-column: 1;
+  margin: 2px 0 0 !important;
+  color: #334155 !important;
+  font-size: 13px !important;
+  line-height: 1.45
+}
+
+.workonity-toast button {
+  grid-column: 2;
+  grid-row: 1/3;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 2px 5px
+}
+
+.workonity-toast-success {
+  border-left-color: #22c55e
+}
+
+.workonity-toast-success span {
+  color: #15803d
+}
+
+.workonity-toast-error {
+  border-left-color: #ef4444
+}
+
+.workonity-toast-error span {
+  color: #b91c1c
+}
+
+.workonity-toast-info {
+  border-left-color: #3b82f6
+}
+
+.workonity-toast-info span {
+  color: #1d4ed8
+}
+
+.workonity-edit-focus {
+  animation: workonity-edit-focus 1.8s ease
+}
+
+@keyframes workonity-edit-focus {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--workonity-primary) 40%, transparent);
+    border-color: var(--workonity-primary)
+  }
+
+  45% {
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--workonity-primary) 16%, transparent);
+    border-color: var(--workonity-primary)
+  }
+
+  100% {
+    box-shadow: var(--workonity-shadow);
+    border-color: var(--workonity-border)
+  }
+}
+
+@media (max-width:1280px) {
+  .workonity-app {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 18px
+  }
+
+  .workonity-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media (max-width:960px) {
+
+  .entry-content #workonity-root,
+  .wp-site-blocks #workonity-root {
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px) !important;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0
+  }
+
+  .workonity-app {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    overflow: hidden
+  }
+
+  .workonity-sidebar {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    height: auto;
+    max-height: none;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box
+  }
+
+  .workonity-sidebar nav {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    max-height: none;
+    padding-bottom: 6px
+  }
+
+  .workonity-sidebar button {
+    white-space: nowrap
+  }
+
+  .workonity-topbar {
+    display: block;
+    padding: 18px
+  }
+
+  .workonity-user-pill {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal
+  }
+
+  .workonity-panel {
+    padding: 18px;
+    border-radius: 18px
+  }
+
+  .workonity-panel-head {
+    display: block
+  }
+
+  .workonity-panel-actions {
+    margin-top: 12px
+  }
+
+  .workonity-clock-content,
+  .workonity-two-col,
+  .workonity-two-cards {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media (max-width:640px) {
+  .workonity-app {
+    padding: 8px;
+    border-radius: 16px;
+    border-left: 0;
+    border-right: 0
+  }
+
+  .workonity-sidebar {
+    padding: 14px
+  }
+
+  .workonity-brand strong {
+    font-size: 14px
+  }
+
+  .workonity-topbar h1 {
+    font-size: 22px !important
+  }
+
+  .workonity-stats-grid {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-form-grid,
+  .workonity-form-grid-wide,
+  .workonity-form-grid-compact {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-card,
+  .workonity-panel {
+    padding: 15px
+  }
+
+  .workonity-btn {
+    width: 100%;
+    justify-content: center
+  }
+
+  .workonity-actions .workonity-btn {
+    width: auto
+  }
+
+  .workonity-table {
+    min-width: 680px
+  }
+
+  .workonity-user-pill {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between
+  }
+
+  .workonity-panel-head h2 {
+    font-size: 18px !important
+  }
+}
+
+@media (prefers-color-scheme:dark) {
+  .workonity-app.workonity-dark {
+    --workonity-bg: #0b1220;
+    --workonity-card: #111827;
+    --workonity-text: #f9fafb;
+    --workonity-muted: #9ca3af;
+    --workonity-border: #1f2937
+  }
+}
+
+.workonity-app.workonity-dark {
+  border-color: transparent
+}
+
+.workonity-brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px;
+  box-sizing: border-box
+}
+
+@media (prefers-color-scheme:dark) {
+
+  .workonity-dark .workonity-panel,
+  .workonity-dark .workonity-card,
+  .workonity-dark .workonity-topbar {
+    background: var(--workonity-card);
+    color: var(--workonity-text)
+  }
+
+  .workonity-dark .workonity-field input,
+  .workonity-dark .workonity-field select,
+  .workonity-dark .workonity-field textarea {
+    background: #0f172a;
+    color: #f9fafb;
+    border-color: #334155
+  }
+}
+
+.workonity-profile-photo {
+  grid-row: span 2
+}
+
+.workonity-profile-photo img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 3px solid color-mix(in srgb, var(--workonity-primary) 25%, white)
+}
+
+.workonity-photo-input-preview {
+  width: 72px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid color-mix(in srgb, var(--workonity-primary) 24%, var(--workonity-border));
+  background: var(--workonity-card)
+}
+
+.workonity-employee-list-person {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 140px
+}
+
+.workonity-employee-list-person img,
+.workonity-employee-list-person i {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--workonity-primary), #16a34a);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-weight: 850
+}
+
+.workonity-employee-list-person>span {
+  font-weight: 750
+}
+
+.workonity-org-tree {
+  overflow: auto;
+  padding: 12px
+}
+
+.workonity-org-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center
+}
+
+.workonity-org-tree li {
+  position: relative;
+  min-width: 220px
+}
+
+.workonity-org-tree li>ul {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px solid var(--workonity-border)
+}
+
+.workonity-org-tree li>ul:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: 24px;
+  border-left: 2px solid var(--workonity-border)
+}
+
+.workonity-org-tree .workonity-org-card {
+  height: auto
+}
+
+@media(max-width:960px) {
+  .workonity-org-tree ul {
+    justify-content: flex-start
+  }
+
+  .workonity-org-tree li {
+    min-width: 190px
+  }
+}
+
+.workonity-decision-panel {
+  border-color: color-mix(in srgb, var(--workonity-primary) 55%, var(--workonity-border));
+  box-shadow: 0 16px 42px color-mix(in srgb, var(--workonity-primary) 12%, transparent)
+}
+
+@media(max-width:960px) {
+  .workonity-org-tree {
+    overflow: visible;
+    padding: 0
+  }
+
+  .workonity-org-tree ul {
+    display: block;
+    width: 100%;
+    max-width: 100%
+  }
+
+  .workonity-org-tree li {
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 12px
+  }
+
+  .workonity-org-tree li>ul {
+    display: block;
+    margin: 12px 0 0 14px;
+    padding: 0 0 0 14px;
+    border-top: 0;
+    border-left: 2px solid var(--workonity-border)
+  }
+
+  .workonity-org-tree li>ul:before {
+    display: none
+  }
+
+  .workonity-org-tree .workonity-org-card {
+    width: 100%;
+    max-width: 100%
+  }
+}
+
+@media(max-width:640px) {
+  .workonity-org-tree li>ul {
+    margin-left: 8px;
+    padding-left: 10px
+  }
+
+  .workonity-org-tree .workonity-org-card {
+    padding: 13px
+  }
+
+  .workonity-decision-panel .workonity-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%
+  }
+}
+
+.workonity-live-timers {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0
+}
+
+.workonity-live-timers strong {
+  font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--workonity-primary) 12%, white);
+  border: 1px solid color-mix(in srgb, var(--workonity-primary) 25%, white);
+  padding: 8px 12px;
+  border-radius: 999px
+}
+
+.workonity-bar-chart {
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  border-bottom: 1px solid var(--workonity-border);
+  padding-top: 12px
+}
+
+.workonity-bar-column {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  padding-bottom: 24px
+}
+
+.workonity-bar {
+  width: 34%;
+  min-height: 2px;
+  border-radius: 5px 5px 0 0
+}
+
+.workonity-bar.present {
+  background: var(--workonity-primary)
+}
+
+.workonity-bar.absent {
+  background: #ef4444
+}
+
+.workonity-bar-column>span {
+  position: absolute;
+  bottom: 3px;
+  font-size: 10px;
+  color: var(--workonity-muted)
+}
+
+.workonity-progress-list>div {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) 2fr auto;
+  gap: 10px;
+  align-items: center;
+  margin: 13px 0
+}
+
+.workonity-progress {
+  height: 9px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden
+}
+
+.workonity-progress i {
+  display: block;
+  height: 100%;
+  background: var(--workonity-primary);
+  border-radius: inherit
+}
+
+/* Explicit dark theme. Keep this outside prefers-color-scheme so the saved
+   dashboard setting behaves consistently and is not dependent on the OS. */
+.workonity-app.workonity-dark {
+  --workonity-bg: #07111f;
+  --workonity-card: #111c2e;
+  --workonity-text: #f8fafc;
+  --workonity-muted: #b8c4d4;
+  --workonity-border: #2b3a50;
+  --workonity-shadow: 0 18px 48px rgba(0, 0, 0, .28);
+  color-scheme: dark;
+  color: var(--workonity-text) !important;
+}
+
+.workonity-dark .workonity-main,
+.workonity-dark .workonity-view,
+.workonity-dark .workonity-panel,
+.workonity-dark .workonity-card,
+.workonity-dark .workonity-topbar {
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark h1,
+.workonity-dark h2,
+.workonity-dark h3,
+.workonity-dark h4,
+.workonity-dark h5,
+.workonity-dark h6,
+.workonity-dark strong,
+.workonity-dark label {
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark .workonity-topbar p,
+.workonity-dark .workonity-panel p,
+.workonity-dark .workonity-card-title,
+.workonity-dark .workonity-card-note,
+.workonity-dark .workonity-field small,
+.workonity-dark .workonity-check small,
+.workonity-dark .workonity-org-card small,
+.workonity-dark .workonity-org-card em,
+.workonity-dark .workonity-clock-status>span {
+  color: var(--workonity-muted) !important
+}
+
+.workonity-dark .workonity-card-value,
+.workonity-dark .workonity-field>span,
+.workonity-dark .workonity-check span,
+.workonity-dark .workonity-profile-grid span,
+.workonity-dark .workonity-org-card span,
+.workonity-dark .workonity-clean-list {
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark .workonity-user-pill,
+.workonity-dark .workonity-subpanel,
+.workonity-dark .workonity-clock-box,
+.workonity-dark .workonity-profile-grid>div,
+.workonity-dark .workonity-permission-group,
+.workonity-dark .workonity-org-card,
+.workonity-dark .workonity-table-card,
+.workonity-dark .workonity-loading {
+  background: #172337 !important;
+  border-color: var(--workonity-border) !important;
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark .workonity-user-pill span {
+  color: var(--workonity-muted) !important
+}
+
+.workonity-dark .workonity-field input:not([type=color]),
+.workonity-dark .workonity-field select,
+.workonity-dark .workonity-field textarea {
+  background: #0b1627 !important;
+  border-color: #40516a !important;
+  color: #f8fafc !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .02) !important
+}
+
+.workonity-dark .workonity-field input::placeholder,
+.workonity-dark .workonity-field textarea::placeholder {
+  color: #8190a5 !important;
+  opacity: 1
+}
+
+.workonity-dark .workonity-field input:focus,
+.workonity-dark .workonity-field select:focus,
+.workonity-dark .workonity-field textarea:focus {
+  border-color: var(--workonity-primary) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--workonity-primary) 25%, transparent) !important;
+  outline: 0 !important
+}
+
+.workonity-dark .workonity-field input[type=color] {
+  background: #0b1627 !important;
+  border-color: #40516a !important
+}
+
+.workonity-dark .workonity-check {
+  background: #172337 !important;
+  border-color: #3a4b63 !important;
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark .workonity-check:hover {
+  background: #1b2a40 !important;
+  border-color: #536780 !important
+}
+
+.workonity-dark .workonity-table th {
+  background: #0c1728 !important;
+  color: #cbd5e1 !important;
+  border-color: var(--workonity-border) !important
+}
+
+.workonity-dark .workonity-table td {
+  background: #111c2e !important;
+  color: #edf2f7 !important;
+  border-color: var(--workonity-border) !important
+}
+
+.workonity-dark .workonity-table tbody tr:hover td {
+  background: #17253a !important
+}
+
+.workonity-dark .workonity-mini-actions button,
+.workonity-dark .workonity-link-btn {
+  background: #20304a !important;
+  color: #bfdbfe !important
+}
+
+.workonity-dark .workonity-mini-actions button:hover,
+.workonity-dark .workonity-link-btn:hover {
+  background: #29405f !important;
+  color: #fff !important
+}
+
+.workonity-dark .workonity-btn {
+  background: color-mix(in srgb, var(--workonity-primary) 72%, #000) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--workonity-primary) 22%, transparent) !important
+}
+
+.workonity-dark .workonity-btn-secondary {
+  background: #334155 !important;
+  color: #fff !important
+}
+
+.workonity-dark .workonity-progress {
+  background: #2d3c52 !important
+}
+
+.workonity-dark .workonity-live-timers strong {
+  background: #172e2a !important;
+  border-color: #285947 !important;
+  color: #dcfce7 !important
+}
+
+.workonity-dark .workonity-empty {
+  color: var(--workonity-muted) !important
+}
+
+.workonity-dark .workonity-empty strong {
+  color: var(--workonity-text) !important
+}
+
+.workonity-dark input[type=checkbox],
+.workonity-dark input[type=radio] {
+  accent-color: var(--workonity-primary)
+}
+
+.workonity-dark .workonity-toast,
+.workonity-toast-region-dark .workonity-toast {
+  background: #172337;
+  color: #f8fafc;
+  border-color: #40516a;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .34)
+}
+
+.workonity-dark .workonity-toast p,
+.workonity-toast-region-dark .workonity-toast p {
+  color: #dbe4ef !important
+}
+
+.workonity-dark .workonity-toast button,
+.workonity-toast-region-dark .workonity-toast button {
+  color: #cbd5e1
+}
+
+.workonity-dark .workonity-toast-success span,
+.workonity-toast-region-dark .workonity-toast-success span {
+  color: #86efac
+}
+
+.workonity-dark .workonity-toast-error span,
+.workonity-toast-region-dark .workonity-toast-error span {
+  color: #fca5a5
+}
+
+.workonity-dark .workonity-toast-info span,
+.workonity-toast-region-dark .workonity-toast-info span {
+  color: #93c5fd
+}
+
+/* Frontend account controls and branded login. */
+.workonity-user-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+  max-width: 55%
+}
+
+.workonity-user-area .workonity-user-pill {
+  max-width: 100%
+}
+
+.workonity-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--workonity-text);
+  font-size: 13px !important;
+  font-weight: 800;
+  cursor: pointer
+}
+
+.workonity-theme-toggle:hover {
+  border-color: var(--workonity-primary);
+  background: color-mix(in srgb, var(--workonity-primary) 10%, transparent)
+}
+
+.workonity-weekend-section {
+  margin: 2px 0 18px;
+  padding: 16px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--workonity-card) 92%, var(--workonity-bg))
+}
+
+.workonity-weekend-section>strong {
+  display: block;
+  font-size: 15px;
+  color: var(--workonity-text)
+}
+
+.workonity-weekend-section>p {
+  margin: 4px 0 14px !important;
+  font-size: 13px !important;
+  color: var(--workonity-muted) !important
+}
+
+.workonity-weekend-section .workonity-weekdays {
+  margin-bottom: 0
+}
+
+.workonity-settings .workonity-panel-head h2 {
+  font-size: 19px !important
+}
+
+.workonity-settings .workonity-panel p {
+  font-size: 13px !important
+}
+
+.workonity-settings .workonity-field>span,
+.workonity-settings .workonity-check span {
+  font-size: 13px !important;
+  line-height: 1.3
+}
+
+.workonity-inline-note {
+  font-size: 12px !important;
+  color: var(--workonity-muted) !important;
+  margin: -10px 0 12px !important
+}
+
+@media(max-width:960px) {
+  .workonity-user-area {
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 12px
+  }
+
+  .workonity-user-area .workonity-user-pill {
+    order: -1;
+    flex: 1 1 100%
+  }
+
+  .workonity-theme-toggle,
+  .workonity-logout {
+    flex: 1 1 auto
+  }
+}
+
+.workonity-logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--workonity-text) !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .18s ease
+}
+
+.workonity-logout:hover {
+  border-color: var(--workonity-primary);
+  background: color-mix(in srgb, var(--workonity-primary) 10%, transparent);
+  color: var(--workonity-text) !important
+}
+
+.workonity-branding-logo-control {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border: 1px dashed var(--workonity-border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--workonity-primary) 4%, var(--workonity-card))
+}
+
+.workonity-branding-logo-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  background: #fff;
+  flex: 0 0 auto
+}
+
+.workonity-branding-logo-preview img {
+  display: block;
+  max-width: 64px;
+  max-height: 64px;
+  object-fit: contain
+}
+
+.workonity-branding-logo-empty {
+  color: var(--workonity-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center
+}
+
+.workonity-branding-logo-copy {
+  min-width: 0;
+  flex: 1
+}
+
+.workonity-branding-logo-copy strong {
+  display: block;
+  color: var(--workonity-text);
+  font-size: 14px
+}
+
+.workonity-branding-logo-copy p {
+  margin: 4px 0 10px;
+  color: var(--workonity-muted);
+  font-size: 12px;
+  line-height: 1.5
+}
+
+.workonity-branding-logo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px
+}
+
+.workonity-brand span {
+  color: color-mix(in srgb, var(--workonity-sidebar-text, #fff) 68%, transparent)
+}
+
+.workonity-sidebar button:hover,
+.workonity-sidebar button.active {
+  color: var(--workonity-sidebar-text, #fff)
+}
+
+.workonity-field input,
+.workonity-field select,
+.workonity-field textarea,
+.workonity-check,
+.workonity-table-card,
+.workonity-org-card,
+.workonity-loading,
+.workonity-auth-box {
+  background-color: var(--workonity-card) !important
+}
+
+.workonity-login-shell {
+  --workonity-primary: #155eef;
+  --workonity-secondary: #071a3d;
+  width: min(1080px, calc(100vw - 32px));
+  max-width: min(1080px, calc(100vw - 32px));
+  min-height: 620px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  margin: 24px 0;
+  padding: clamp(12px, 3vw, 32px);
+  border: 1px solid #dce3ec;
+  border-radius: 30px;
+  background: radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--workonity-primary) 14%, transparent), transparent 34%), #eef3f8;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+  overflow: hidden
+}
+
+.workonity-login-shell * {
+  box-sizing: border-box
+}
+
+.workonity-login-card {
+  width: 100%;
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(340px, 1.1fr);
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, .12);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, .16)
+}
+
+.workonity-login-intro {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 46px;
+  padding: clamp(28px, 5vw, 54px);
+  background: linear-gradient(155deg, var(--workonity-secondary), #111f36);
+  color: #fff
+}
+
+.workonity-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.workonity-login-brand>span,
+.workonity-login-brand img {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #fff;
+  object-fit: contain;
+  padding: 5px;
+  font-weight: 900
+}
+
+.workonity-login-brand>span {
+  background: var(--workonity-primary)
+}
+
+.workonity-login-brand img {
+  background: #fff
+}
+
+.workonity-login-brand strong,
+.workonity-login-brand small {
+  display: block;
+  color: #fff
+}
+
+.workonity-login-brand strong {
+  font-size: 15px
+}
+
+.workonity-login-brand small {
+  margin-top: 3px;
+  color: #cbd5e1;
+  font-size: 12px
+}
+
+.workonity-login-message>span,
+.workonity-login-form-heading>span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--workonity-primary);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase
+}
+
+.workonity-login-message h1 {
+  margin: 0 0 14px !important;
+  color: #fff !important;
+  font-size: clamp(32px, 5vw, 48px) !important;
+  line-height: 1 !important
+}
+
+.workonity-login-message p {
+  max-width: 360px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.65
+}
+
+.workonity-login-security {
+  color: #94a3b8;
+  line-height: 1.5
+}
+
+.workonity-login-form-panel {
+  min-width: 0;
+  padding: clamp(28px, 5vw, 56px);
+  color: #172033
+}
+
+.workonity-login-form-heading h2 {
+  margin: 0 0 8px !important;
+  color: #111827 !important;
+  font-size: 28px !important;
+  line-height: 1.2 !important
+}
+
+.workonity-login-form-heading p {
+  margin: 0 0 26px;
+  color: #64748b;
+  font-size: 14px
+}
+
+.workonity-login-alert {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fff1f2;
+  color: #9f1239;
+  font-size: 13px;
+  font-weight: 700
+}
+
+.workonity-login-form {
+  display: grid;
+  gap: 18px;
+  margin: 0
+}
+
+.workonity-login-form>label:not(.workonity-login-remember) {
+  display: grid;
+  gap: 7px
+}
+
+.workonity-login-form label>span {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800
+}
+
+.workonity-login-form input[type=text],
+.workonity-login-form input[type=password] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 11px 13px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 13px !important;
+  background: #fff !important;
+  color: #111827 !important;
+  font-size: 15px !important;
+  box-shadow: none !important;
+  outline: 0
+}
+
+.workonity-login-form input[type=text]:focus,
+.workonity-login-form input[type=password]:focus {
+  border-color: var(--workonity-primary) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--workonity-primary) 18%, transparent) !important
+}
+
+.workonity-password-field {
+  position: relative;
+  display: block
+}
+
+.workonity-password-field input {
+  padding-right: 76px !important
+}
+
+.workonity-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 9px;
+  padding: 7px 9px;
+  background: transparent;
+  color: var(--workonity-primary);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer
+}
+
+.workonity-password-toggle:hover,
+.workonity-password-toggle:focus-visible {
+  background: color-mix(in srgb, var(--workonity-primary) 10%, transparent);
+  outline: 0
+}
+
+.workonity-login-remember {
+  display: flex;
+  align-items: center;
+  gap: 9px
+}
+
+.workonity-login-remember input {
+  margin: 0 !important;
+  accent-color: var(--workonity-primary)
+}
+
+.workonity-login-submit {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--workonity-primary) 78%, #000);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--workonity-primary) 24%, transparent);
+  transition: .18s ease
+}
+
+.workonity-login-submit:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px)
+}
+
+.workonity-login-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0
+}
+
+.workonity-login-links a {
+  color: #334155 !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 750
+}
+
+.workonity-login-links a:hover {
+  color: var(--workonity-primary) !important
+}
+
+@media(max-width:760px) {
+  .workonity-user-area {
+    width: 100%;
+    max-width: 100%;
+    justify-content: stretch;
+    margin-top: 12px
+  }
+
+  .workonity-user-area .workonity-user-pill {
+    width: 100%;
+    margin-top: 0
+  }
+
+  .workonity-logout {
+    min-height: 44px
+  }
+
+  .workonity-login-shell {
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+    min-height: auto;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 20px
+  }
+
+  .workonity-login-card {
+    grid-template-columns: 1fr;
+    border-radius: 18px
+  }
+
+  .workonity-login-intro {
+    gap: 24px;
+    padding: 24px
+  }
+
+  .workonity-login-message h1 {
+    font-size: 32px !important
+  }
+
+  .workonity-login-message p {
+    font-size: 14px
+  }
+
+  .workonity-login-security {
+    display: none
+  }
+
+  .workonity-login-form-panel {
+    padding: 26px 22px 30px
+  }
+
+  .workonity-login-form-heading h2 {
+    font-size: 24px !important
+  }
+}
+
+@media(max-width:420px) {
+  .workonity-user-area {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto
+  }
+
+  .workonity-user-area .workonity-user-pill {
+    display: block
+  }
+
+  .workonity-user-area .workonity-user-pill span,
+  .workonity-user-area .workonity-user-pill strong {
+    display: block
+  }
+
+  .workonity-login-intro {
+    padding: 20px
+  }
+
+  .workonity-login-form-panel {
+    padding: 24px 18px 26px
+  }
+}
+
+/* Keep profile data readable inside every card, regardless of theme typography. */
+.workonity-profile-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr))
+}
+
+.workonity-profile-grid>div {
+  min-width: 0;
+  overflow: hidden;
+  gap: 5px
+}
+
+.workonity-profile-grid>div>strong {
+  display: block;
+  font-size: 12px !important;
+  line-height: 1.35 !important
+}
+
+.workonity-profile-grid>div>span {
+  display: block;
+  max-width: 100%;
+  font-size: clamp(13px, 1.1vw, 16px) !important;
+  line-height: 1.4 !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal
+}
+
+.workonity-profile-grid>div>.workonity-status {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  font-size: 11px !important;
+  line-height: 1.2 !important
+}
+
+@media(max-width:760px) {
+  .workonity-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media(max-width:480px) {
+  .workonity-profile-grid {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-profile-grid>div>span {
+    font-size: 14px !important
+  }
+}
+
+.workonity-announcement-list {
+  display: grid;
+  gap: 10px
+}
+
+.workonity-announcement-item {
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  background: #f8fafc
+}
+
+.workonity-announcement-item>div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.workonity-announcement-item strong {
+  min-width: 0;
+  color: var(--workonity-text);
+  font-size: 14px;
+  line-height: 1.35;
+  overflow-wrap: anywhere
+}
+
+.workonity-announcement-item time {
+  flex: 0 0 auto;
+  color: var(--workonity-muted);
+  font-size: 11px
+}
+
+.workonity-announcement-item p {
+  margin: 6px 0 0 !important;
+  color: var(--workonity-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.5
+}
+
+.workonity-dark .workonity-announcement-item {
+  background: #172337;
+  border-color: var(--workonity-border)
+}
+
+@media(max-width:480px) {
+  .workonity-announcement-item>div {
+    display: block
+  }
+
+  .workonity-announcement-item time {
+    display: block;
+    margin-top: 3px
+  }
+}
+
+/* Attendance correction approval details. */
+.workonity-detail-row>td {
+  background: #fbfdff !important;
+  padding: 16px !important
+}
+
+.workonity-correction-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px
+}
+
+.workonity-correction-column {
+  border: 1px solid var(--workonity-border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.workonity-correction-column h4 {
+  margin: 0 !important;
+  font-size: 14px !important
+}
+
+.workonity-correction-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px
+}
+
+.workonity-correction-cell small,
+.workonity-correction-note small {
+  color: var(--workonity-muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em
+}
+
+.workonity-correction-cell strong {
+  font-size: 13px;
+  word-break: break-word
+}
+
+.workonity-correction-note p {
+  margin: 4px 0 0 !important;
+  color: var(--workonity-text);
+  font-size: 13px;
+  white-space: pre-wrap
+}
+
+.workonity-correction-column-wide {
+  grid-column: 1/-1
+}
+
+.workonity-attachment-box {
+  border: 1px solid var(--workonity-border);
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--workonity-card);
+  display: grid;
+  gap: 5px
+}
+
+.workonity-attachment-box small {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--workonity-muted);
+  font-weight: 850
+}
+
+.workonity-attachment-box strong {
+  font-size: 13px;
+  overflow-wrap: anywhere
+}
+
+.workonity-attachment-box p {
+  margin: 0 !important;
+  color: var(--workonity-muted) !important;
+  font-size: 12px
+}
+
+.workonity-leave-approval-details .workonity-correction-column {
+  align-content: start
+}
+
+.workonity-dark .workonity-detail-row>td {
+  background: #0f1b2d !important
+}
+
+.workonity-dark .workonity-correction-column {
+  background: #172337 !important;
+  border-color: var(--workonity-border) !important
+}
+
+.workonity-dark .workonity-attachment-box {
+  background: #0f172a !important;
+  border-color: #334155 !important
+}
+
+.workonity-audit-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px
+}
+
+.workonity-audit-detail>div {
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  background: var(--workonity-card);
+  padding: 12px;
+  min-width: 0
+}
+
+.workonity-audit-detail h4 {
+  margin: 0 0 8px !important;
+  font-size: 13px !important
+}
+
+.workonity-audit-detail pre {
+  max-height: 260px;
+  overflow: auto;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word
+}
+
+.workonity-audit-detail p {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  color: var(--workonity-muted) !important
+}
+
+.workonity-dark .workonity-audit-detail>div {
+  background: #0f172a !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-audit-detail pre {
+  background: #020617 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #334155 !important
+}
+
+/* Search, filters, and pagination for operational tables. */
+.workonity-table-tools {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) auto;
+  gap: 12px;
+  align-items: end;
+  padding: 14px;
+  border-bottom: 1px solid var(--workonity-border);
+  background: color-mix(in srgb, var(--workonity-card) 92%, var(--workonity-bg))
+}
+
+.workonity-table-search,
+.workonity-table-per-page,
+.workonity-table-filters label,
+.workonity-table-date-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0
+}
+
+.workonity-table-tools span {
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--workonity-muted)
+}
+
+.workonity-table-tools input,
+.workonity-table-tools select {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 11px;
+  background: var(--workonity-card);
+  color: var(--workonity-text);
+  padding: 8px 10px;
+  font-size: 13px;
+  box-shadow: none
+}
+
+.workonity-table-filters,
+.workonity-table-date-filters {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  flex-wrap: wrap
+}
+
+.workonity-table-filters label {
+  min-width: 150px
+}
+
+.workonity-table-date-filters fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 8px;
+  min-width: 260px;
+  margin: 0;
+  padding: 0;
+  border: 0
+}
+
+.workonity-table-date-filters legend {
+  grid-column: 1/-1;
+  margin: 0 0 -3px;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--workonity-muted)
+}
+
+.workonity-table-per-page {
+  width: 96px
+}
+
+.workonity-table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--workonity-border);
+  background: color-mix(in srgb, var(--workonity-card) 92%, var(--workonity-bg));
+  color: var(--workonity-muted);
+  font-size: 12px
+}
+
+.workonity-table-pagination>div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap
+}
+
+.workonity-table-pagination button {
+  border: 1px solid var(--workonity-border);
+  border-radius: 10px;
+  background: var(--workonity-card);
+  color: var(--workonity-text);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer
+}
+
+.workonity-table-pagination button:disabled {
+  opacity: .45;
+  cursor: not-allowed
+}
+
+.workonity-table-pagination strong {
+  color: var(--workonity-text);
+  font-size: 12px
+}
+
+.workonity-dark .workonity-table-tools,
+.workonity-dark .workonity-table-pagination {
+  background: #0f1b2d;
+  border-color: var(--workonity-border)
+}
+
+.workonity-dark .workonity-table-tools input,
+.workonity-dark .workonity-table-tools select,
+.workonity-dark .workonity-table-pagination button {
+  background: #172337;
+  border-color: #40516a;
+  color: var(--workonity-text)
+}
+
+@media(max-width:960px) {
+  .workonity-table-tools {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-table-filters,
+  .workonity-table-date-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch
+  }
+
+  .workonity-table-filters label,
+  .workonity-table-date-filters fieldset,
+  .workonity-table-per-page {
+    width: 100%;
+    min-width: 0
+  }
+
+  .workonity-table-pagination {
+    display: grid;
+    gap: 10px
+  }
+
+  .workonity-table-pagination>div {
+    justify-content: flex-start
+  }
+}
+
+@media(max-width:520px) {
+
+  .workonity-table-filters,
+  .workonity-table-date-filters {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-table-pagination>div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  .workonity-table-pagination strong {
+    grid-column: 1/-1;
+    order: -1
+  }
+
+  .workonity-table-pagination button {
+    width: 100%
+  }
+}
+
+/* Unified responsive filter toolbar for every DataTable. */
+.workonity-table-tools {
+  display: grid !important;
+  grid-template-columns: minmax(230px, 1.15fr) minmax(260px, 1.45fr) minmax(260px, 1.25fr) minmax(92px, .35fr) auto !important;
+  gap: 12px !important;
+  align-items: end !important;
+  padding: 14px 16px !important;
+  border-bottom: 1px solid var(--workonity-border) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--workonity-card) 96%, var(--workonity-bg)), color-mix(in srgb, var(--workonity-card) 90%, var(--workonity-bg))) !important
+}
+
+.workonity-table-tools>* {
+  min-width: 0 !important
+}
+
+.workonity-table-search,
+.workonity-table-per-page,
+.workonity-table-filters label,
+.workonity-table-date-filters label {
+  display: grid !important;
+  gap: 6px !important;
+  min-width: 0 !important
+}
+
+.workonity-table-tools span,
+.workonity-table-date-filters legend {
+  font-size: 10.5px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .055em !important;
+  color: var(--workonity-muted) !important;
+  line-height: 1.15 !important
+}
+
+.workonity-table-tools input,
+.workonity-table-tools select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 44px !important;
+  height: 44px !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--workonity-border) !important;
+  border-radius: 13px !important;
+  background: var(--workonity-card) !important;
+  color: var(--workonity-text) !important;
+  padding: 9px 12px !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  box-shadow: none !important;
+  outline: 0 !important
+}
+
+.workonity-table-tools input:focus,
+.workonity-table-tools select:focus {
+  border-color: color-mix(in srgb, var(--workonity-primary) 55%, var(--workonity-border)) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--workonity-primary) 14%, transparent) !important
+}
+
+.workonity-table-filters {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)) !important;
+  gap: 10px !important;
+  align-items: end !important
+}
+
+.workonity-table-filters label {
+  min-width: 0 !important
+}
+
+.workonity-table-date-filters {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+  align-items: end !important
+}
+
+.workonity-table-date-filters fieldset {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important
+}
+
+.workonity-table-date-filters legend {
+  grid-column: 1/-1 !important;
+  margin: 0 0 -2px !important
+}
+
+.workonity-table-per-page {
+  width: auto !important
+}
+
+.workonity-table-reset {
+  min-height: 44px !important;
+  border: 1px solid var(--workonity-border) !important;
+  border-radius: 13px !important;
+  background: var(--workonity-card) !important;
+  color: var(--workonity-text) !important;
+  padding: 9px 13px !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important
+}
+
+.workonity-table-reset:disabled {
+  opacity: .45 !important;
+  cursor: not-allowed !important
+}
+
+.workonity-table-reset:not(:disabled):hover {
+  border-color: color-mix(in srgb, var(--workonity-primary) 45%, var(--workonity-border)) !important;
+  color: var(--workonity-primary) !important
+}
+
+.workonity-dark .workonity-table-reset {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important
+}
+
+@media(max-width:1180px) {
+  .workonity-table-tools {
+    grid-template-columns: minmax(220px, 1fr) minmax(240px, 1fr) minmax(260px, 1fr) minmax(92px, .4fr) !important
+  }
+
+  .workonity-table-reset {
+    grid-column: 1/-1;
+    width: max-content !important
+  }
+}
+
+@media(max-width:820px) {
+  .workonity-table-tools {
+    grid-template-columns: 1fr 1fr !important
+  }
+
+  .workonity-table-search,
+  .workonity-table-filters,
+  .workonity-table-date-filters {
+    grid-column: 1/-1 !important
+  }
+
+  .workonity-table-per-page {
+    grid-column: 1/2 !important
+  }
+
+  .workonity-table-reset {
+    grid-column: 2/3 !important;
+    width: 100% !important
+  }
+
+  .workonity-table-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+  }
+}
+
+@media(max-width:560px) {
+  .workonity-table-tools {
+    grid-template-columns: 1fr !important;
+    padding: 12px !important
+  }
+
+  .workonity-table-search,
+  .workonity-table-filters,
+  .workonity-table-date-filters,
+  .workonity-table-per-page,
+  .workonity-table-reset {
+    grid-column: 1/-1 !important;
+    width: 100% !important
+  }
+
+  .workonity-table-filters,
+  .workonity-table-date-filters fieldset {
+    grid-template-columns: 1fr !important
+  }
+}
+
+/* Final table-toolbar layout: every filter is an inline grid item, not a stacked group. */
+.workonity-table-tools {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
+  gap: 12px !important;
+  align-items: end !important
+}
+
+.workonity-table-filters,
+.workonity-table-date-filters {
+  display: contents !important
+}
+
+.workonity-table-search,
+.workonity-table-filters label,
+.workonity-table-per-page {
+  width: 100% !important;
+  min-width: 0 !important
+}
+
+.workonity-table-date-filters fieldset {
+  min-width: 0 !important;
+  width: 100% !important
+}
+
+.workonity-table-search {
+  grid-column: auto !important
+}
+
+.workonity-table-per-page {
+  max-width: none !important
+}
+
+.workonity-table-reset {
+  width: 100% !important
+}
+
+@media(min-width:900px) {
+  .workonity-table-search {
+    min-width: 220px !important
+  }
+
+  .workonity-table-date-filters fieldset {
+    grid-column: span 2 !important
+  }
+
+  .workonity-table-reset {
+    align-self: end !important
+  }
+}
+
+@media(max-width:720px) {
+  .workonity-table-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+  }
+
+  .workonity-table-date-filters fieldset {
+    grid-column: 1/-1 !important
+  }
+
+  .workonity-table-search {
+    grid-column: 1/-1 !important
+  }
+}
+
+@media(max-width:520px) {
+  .workonity-table-tools {
+    grid-template-columns: 1fr !important
+  }
+
+  .workonity-table-date-filters fieldset,
+  .workonity-table-search,
+  .workonity-table-reset,
+  .workonity-table-per-page {
+    grid-column: 1/-1 !important
+  }
+}
+
+/* Fixed professional dark mode. It intentionally ignores configurable branding
+   colors so every installation gets one readable dark palette. */
+.workonity-app.workonity-dark {
+  --workonity-primary: #38bdf8 !important;
+  --workonity-secondary: #e2e8f0 !important;
+  --workonity-bg: #07111f !important;
+  --workonity-card: #111827 !important;
+  --workonity-text: #f8fafc !important;
+  --workonity-muted: #cbd5e1 !important;
+  --workonity-border: #334155 !important;
+  --workonity-sidebar-bg: #020617 !important;
+  --workonity-sidebar-text: #f8fafc !important;
+  background: #07111f !important;
+  color: #f8fafc !important;
+  border-color: #1e293b !important
+}
+
+.workonity-dark .workonity-main,
+.workonity-dark .workonity-view,
+.workonity-dark .workonity-panel,
+.workonity-dark .workonity-card,
+.workonity-dark .workonity-topbar,
+.workonity-dark .workonity-table-card,
+.workonity-dark .workonity-auth-box {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-sidebar {
+  background: linear-gradient(180deg, #020617, #0f172a) !important;
+  color: #f8fafc !important;
+  border: 1px solid #1e293b !important
+}
+
+.workonity-dark .workonity-sidebar button {
+  color: #dbeafe !important
+}
+
+.workonity-dark .workonity-sidebar button:hover,
+.workonity-dark .workonity-sidebar button.active {
+  background: #1e293b !important;
+  color: #fff !important
+}
+
+.workonity-dark h1,
+.workonity-dark h2,
+.workonity-dark h3,
+.workonity-dark h4,
+.workonity-dark strong,
+.workonity-dark label,
+.workonity-dark .workonity-field>span,
+.workonity-dark .workonity-check span,
+.workonity-dark .workonity-card-value,
+.workonity-dark .workonity-profile-grid span {
+  color: #f8fafc !important
+}
+
+.workonity-dark p,
+.workonity-dark small,
+.workonity-dark em,
+.workonity-dark .workonity-card-title,
+.workonity-dark .workonity-card-note,
+.workonity-dark .workonity-topbar p,
+.workonity-dark .workonity-panel p,
+.workonity-dark .workonity-field small,
+.workonity-dark .workonity-check small {
+  color: #cbd5e1 !important
+}
+
+.workonity-dark .workonity-subpanel,
+.workonity-dark .workonity-clock-box,
+.workonity-dark .workonity-profile-grid>div,
+.workonity-dark .workonity-permission-group,
+.workonity-dark .workonity-org-card,
+.workonity-dark .workonity-correction-column,
+.workonity-dark .workonity-announcement-item,
+.workonity-dark .workonity-user-pill,
+.workonity-dark .workonity-empty,
+.workonity-dark .workonity-loading {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-field input:not([type=color]),
+.workonity-dark .workonity-field select,
+.workonity-dark .workonity-field textarea,
+.workonity-dark .workonity-table-tools input,
+.workonity-dark .workonity-table-tools select {
+  background: #020617 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important
+}
+
+.workonity-dark .workonity-field input::placeholder,
+.workonity-dark .workonity-field textarea::placeholder {
+  color: #94a3b8 !important
+}
+
+.workonity-dark .workonity-check {
+  background: #172033 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important
+}
+
+.workonity-dark .workonity-check:hover {
+  background: #1e293b !important;
+  border-color: #64748b !important
+}
+
+.workonity-dark input[type=checkbox],
+.workonity-dark input[type=radio] {
+  accent-color: #38bdf8 !important
+}
+
+.workonity-dark .workonity-table th {
+  background: #020617 !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-table td {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-table tbody tr:hover td {
+  background: #1e293b !important
+}
+
+.workonity-dark .workonity-btn {
+  background: #0284c7 !important;
+  color: #fff !important;
+  box-shadow: 0 12px 24px rgba(14, 165, 233, .22) !important
+}
+
+.workonity-dark .workonity-btn-secondary,
+.workonity-dark .workonity-theme-toggle,
+.workonity-dark .workonity-logout,
+.workonity-dark .workonity-mini-actions button,
+.workonity-dark .workonity-link-btn,
+.workonity-dark .workonity-table-pagination button {
+  background: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important
+}
+
+.workonity-dark .workonity-status {
+  background: #1e293b;
+  color: #f8fafc
+}
+
+.workonity-dark .workonity-status-present,
+.workonity-dark .workonity-status-approved,
+.workonity-dark .workonity-status-active,
+.workonity-dark .workonity-status-published {
+  background: #064e3b !important;
+  color: #bbf7d0 !important
+}
+
+.workonity-dark .workonity-status-late,
+.workonity-dark .workonity-status-pending,
+.workonity-dark .workonity-status-pending_correction,
+.workonity-dark .workonity-status-missing_clock_out {
+  background: #78350f !important;
+  color: #fde68a !important
+}
+
+.workonity-dark .workonity-status-rejected,
+.workonity-dark .workonity-status-terminated,
+.workonity-dark .workonity-status-suspended,
+.workonity-dark .workonity-status-deleted {
+  background: #7f1d1d !important;
+  color: #fecaca !important
+}
+
+.workonity-dark .workonity-status-half_day,
+.workonity-dark .workonity-status-early_leave,
+.workonity-dark .workonity-status-draft {
+  background: #1e3a8a !important;
+  color: #bfdbfe !important
+}
+
+.workonity-mini-actions .workonity-danger-link {
+  background: #fee2e2 !important;
+  color: #991b1b !important
+}
+
+.workonity-mini-actions .workonity-danger-link:hover {
+  background: #fecaca !important;
+  color: #7f1d1d !important
+}
+
+.workonity-dark .workonity-mini-actions .workonity-danger-link {
+  background: #7f1d1d !important;
+  color: #fecaca !important;
+  border-color: #991b1b !important
+}
+
+.workonity-dark .workonity-mini-actions .workonity-danger-link:hover {
+  background: #991b1b !important;
+  color: #fff !important
+}
+
+/* Compact organization cards with animated team groups and detail modal. */
+.workonity-org-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  margin: 0 0 14px
+}
+
+.workonity-org-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: min(100%, 420px)
+}
+
+.workonity-org-toolbar span {
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--workonity-muted)
+}
+
+.workonity-org-toolbar input {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 12px;
+  background: var(--workonity-card);
+  color: var(--workonity-text);
+  padding: 9px 12px;
+  font-size: 13px
+}
+
+.workonity-org-tree,
+.workonity-org-tree ul {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible !important;
+  padding: 0 !important
+}
+
+.workonity-org-tree ul {
+  list-style: none !important;
+  margin: 0 !important;
+  display: grid !important;
+  gap: 12px !important
+}
+
+.workonity-org-tree>ul,
+.workonity-org-search-results {
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)) !important;
+  display: grid !important;
+  gap: 12px !important
+}
+
+.workonity-org-node {
+  min-width: 0 !important;
+  margin: 0 !important
+}
+
+.workonity-org-node::before,
+.workonity-org-node>ul:before,
+.workonity-org-node>ul>.workonity-org-node::before {
+  display: none !important;
+  content: none !important
+}
+
+.workonity-org-card {
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 11px !important;
+  border: 1px solid var(--workonity-border) !important;
+  border-radius: 16px !important;
+  background: var(--workonity-card) !important;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, .04) !important
+}
+
+.workonity-org-card img,
+.workonity-org-card .workonity-avatar {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 13px !important;
+  font-size: 19px !important
+}
+
+.workonity-org-card-main {
+  min-width: 0;
+  display: grid;
+  gap: 2px
+}
+
+.workonity-org-card-main strong {
+  font-size: 14px !important;
+  line-height: 1.22 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.workonity-org-card-main span {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  color: var(--workonity-text) !important;
+  font-weight: 800 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.workonity-org-card-main small {
+  font-size: 11px !important;
+  color: var(--workonity-muted) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.workonity-org-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+.workonity-org-icon-btn,
+.workonity-org-detail-btn,
+.workonity-org-count {
+  border: 1px solid var(--workonity-border);
+  background: #f8fafc;
+  color: #1d4ed8;
+  border-radius: 999px;
+  font-weight: 900;
+  line-height: 1;
+  min-height: 28px
+}
+
+.workonity-org-icon-btn {
+  width: 28px;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer
+}
+
+.workonity-org-count {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  color: var(--workonity-muted);
+  font-size: 11px
+}
+
+.workonity-org-detail-btn {
+  padding: 7px 10px;
+  font-size: 11px;
+  cursor: pointer
+}
+
+.workonity-org-report-count {
+  position: absolute;
+  right: 12px;
+  bottom: -9px;
+  background: #ecfdf5;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 900
+}
+
+.workonity-org-children-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: grid-template-rows .24s ease, opacity .18s ease, transform .24s ease;
+  margin-left: clamp(8px, calc((var(--workonity-org-level, 0) + 1) * 10px), 32px);
+  padding-left: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--workonity-primary) 24%, var(--workonity-border))
+}
+
+.workonity-org-children-wrap.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 12px
+}
+
+.workonity-org-children-wrap.is-closed {
+  pointer-events: none
+}
+
+.workonity-org-children-wrap>.workonity-org-children {
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)) !important
+}
+
+.workonity-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(15, 23, 42, .54);
+  display: grid;
+  place-items: center;
+  padding: 18px
+}
+
+.workonity-modal-card {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: min(720px, 92vh);
+  overflow: auto;
+  background: var(--workonity-card);
+  color: var(--workonity-text);
+  border: 1px solid var(--workonity-border);
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, .28);
+  padding: 20px
+}
+
+.workonity-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 0;
+  background: #f3f4f6;
+  color: #111827;
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer
+}
+
+.workonity-org-modal-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-right: 38px;
+  margin-bottom: 16px
+}
+
+.workonity-org-modal-head img,
+.workonity-org-modal-head .workonity-avatar {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 17px !important
+}
+
+.workonity-org-modal-head h3 {
+  margin: 0 !important;
+  font-size: 20px !important
+}
+
+.workonity-org-modal-head p {
+  margin: 2px 0 8px !important;
+  color: var(--workonity-muted)
+}
+
+.workonity-org-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px
+}
+
+.workonity-org-modal-grid>div,
+.workonity-org-modal-note {
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  padding: 10px;
+  background: color-mix(in srgb, var(--workonity-card) 88%, var(--workonity-bg))
+}
+
+.workonity-org-modal-grid span,
+.workonity-org-modal-note span {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--workonity-muted);
+  margin-bottom: 4px
+}
+
+.workonity-org-modal-grid strong {
+  font-size: 13px;
+  overflow-wrap: anywhere
+}
+
+.workonity-org-modal-note {
+  margin-top: 10px
+}
+
+.workonity-org-modal-note p {
+  margin: 0 !important
+}
+
+.workonity-dark .workonity-org-card,
+.workonity-dark .workonity-modal-card {
+  background: #0f172a !important;
+  border-color: #334155 !important
+}
+
+.workonity-dark .workonity-org-icon-btn,
+.workonity-dark .workonity-org-detail-btn,
+.workonity-dark .workonity-org-count,
+.workonity-dark .workonity-modal-close {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #93c5fd !important
+}
+
+.workonity-dark .workonity-org-modal-grid>div,
+.workonity-dark .workonity-org-modal-note {
+  background: #111827 !important;
+  border-color: #334155 !important
+}
+
+.workonity-org-split {
+  display: grid;
+  grid-template-columns: minmax(340px, .95fr) minmax(300px, 1.05fr);
+  gap: 18px;
+  align-items: start
+}
+
+.workonity-org-split.is-tree-focus {
+  grid-template-columns: 1fr
+}
+
+.workonity-org-main {
+  min-width: 0
+}
+
+.workonity-org-card {
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease
+}
+
+.workonity-org-card:hover,
+.workonity-org-card.is-selected {
+  border-color: color-mix(in srgb, var(--workonity-primary) 45%, var(--workonity-border)) !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, .08) !important
+}
+
+.workonity-org-card.is-selected {
+  transform: translateY(-1px)
+}
+
+.workonity-org-side-panel {
+  position: sticky;
+  top: 18px;
+  border: 1px solid var(--workonity-border);
+  border-radius: 20px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--workonity-card) 94%, var(--workonity-primary)), var(--workonity-card));
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .06);
+  min-width: 0
+}
+
+.workonity-org-side-head {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-bottom: 14px
+}
+
+.workonity-org-side-head img,
+.workonity-org-side-head .workonity-avatar {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 17px !important
+}
+
+.workonity-org-side-head h3,
+.workonity-org-summary-panel h3 {
+  margin: 0 !important;
+  font-size: 19px !important
+}
+
+.workonity-org-side-head p,
+.workonity-org-summary-panel p {
+  margin: 3px 0 8px !important;
+  color: var(--workonity-muted)
+}
+
+.workonity-org-side-grid,
+.workonity-org-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 9px
+}
+
+.workonity-org-side-grid>div,
+.workonity-org-stat-grid>div,
+.workonity-org-side-note,
+.workonity-org-direct-list {
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--workonity-card) 90%, var(--workonity-bg));
+  padding: 10px
+}
+
+.workonity-org-side-grid span,
+.workonity-org-stat-grid span,
+.workonity-org-side-note span,
+.workonity-org-direct-list>span {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--workonity-muted);
+  margin-bottom: 4px
+}
+
+.workonity-org-side-grid strong,
+.workonity-org-stat-grid strong {
+  font-size: 13px;
+  overflow-wrap: anywhere
+}
+
+.workonity-org-direct-list,
+.workonity-org-side-note {
+  margin-top: 10px
+}
+
+.workonity-org-direct-list ul {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid;
+  gap: 7px
+}
+
+.workonity-org-direct-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center
+}
+
+.workonity-org-direct-list button {
+  border: 0;
+  background: transparent;
+  color: var(--workonity-primary);
+  font-weight: 850;
+  text-align: left;
+  padding: 0;
+  cursor: pointer
+}
+
+.workonity-org-direct-list small {
+  color: var(--workonity-muted);
+  font-size: 11px
+}
+
+.workonity-org-side-note p {
+  margin: 0 !important
+}
+
+.workonity-org-side-panel>.workonity-link-btn {
+  margin-top: 12px
+}
+
+.workonity-dark .workonity-org-side-panel,
+.workonity-dark .workonity-org-side-grid>div,
+.workonity-dark .workonity-org-stat-grid>div,
+.workonity-dark .workonity-org-side-note,
+.workonity-dark .workonity-org-direct-list {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important
+}
+
+@media(max-width:720px) {
+  .workonity-org-toolbar {
+    display: grid
+  }
+
+  .workonity-org-toolbar label {
+    min-width: 0
+  }
+
+  .workonity-org-tree>ul,
+  .workonity-org-search-results,
+  .workonity-org-children-wrap>.workonity-org-children {
+    grid-template-columns: 1fr !important
+  }
+
+  .workonity-org-card {
+    grid-template-columns: 40px minmax(0, 1fr) !important
+  }
+
+  .workonity-org-card-actions {
+    grid-column: 1/-1;
+    justify-content: flex-start
+  }
+
+  .workonity-org-report-count {
+    position: static;
+    grid-column: 1/-1;
+    width: max-content
+  }
+
+  .workonity-org-children-wrap {
+    margin-left: 8px;
+    padding-left: 8px
+  }
+
+  .workonity-modal-backdrop {
+    padding: 10px
+  }
+
+  .workonity-modal-card {
+    padding: 16px
+  }
+
+  .workonity-org-modal-head h3 {
+    font-size: 17px !important
+  }
+}
+
+@media(max-width:1100px) {
+  .workonity-org-split {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-org-side-panel {
+    position: relative;
+    top: auto;
+    order: -1
+  }
+
+  .workonity-org-split.is-tree-focus .workonity-org-side-panel {
+    display: none
+  }
+}
+
+@media(max-width:720px) {
+
+  .workonity-org-side-grid,
+  .workonity-org-stat-grid {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-org-side-head {
+    align-items: flex-start
+  }
+
+  .workonity-org-direct-list li {
+    grid-template-columns: 1fr
+  }
+
+  .workonity-org-toolbar .workonity-link-btn {
+    width: max-content
+  }
+}
+
+.workonity-org-accordion>ul {
+  display: block !important
+}
+
+.workonity-org-accordion .workonity-org-node {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 12px !important
+}
+
+.workonity-org-accordion .workonity-org-children-wrap>.workonity-org-children {
+  display: block !important
+}
+
+.workonity-org-accordion .workonity-org-children>.workonity-org-node:last-child {
+  margin-bottom: 0 !important
+}
+
+.workonity-org-children-wrap.is-closed {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  border-left: 0 !important;
+  visibility: hidden
+}
+
+.workonity-org-children-wrap.is-open {
+  visibility: visible
+}
+
+.workonity-org-accordion .workonity-org-card {
+  max-width: 520px !important
+}
+
+.workonity-pro-preview {
+  border: 1px solid color-mix(in srgb, var(--workonity-primary, #155eef) 32%, var(--workonity-border, #dbe1ea));
+}
+
+.workonity-pro-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 14px 0 18px;
+}
+
+.workonity-pro-plan-grid article {
+  padding: 16px;
+  border: 1px solid var(--workonity-border, #dbe1ea);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--workonity-card) 88%, var(--workonity-bg));
+}
+
+.workonity-pro-plan-grid p {
+  margin: 7px 0 0;
+  color: var(--workonity-muted, #64748b);
+  line-height: 1.5;
+}
+
+.workonity-dark .workonity-pro-plan-grid article {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+@media (max-width:700px) {
+  .workonity-pro-plan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workonity-card--pro-locked {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 112px
+}
+
+.workonity-card-locked-content {
+  filter: blur(4px);
+  opacity: .52;
+  pointer-events: none;
+  user-select: none
+}
+
+.workonity-card-pro-badge {
+  position: absolute;
+  z-index: 1;
+  right: 14px;
+  top: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--workonity-primary) 42%, var(--workonity-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--workonity-primary) 12%, var(--workonity-card));
+  color: var(--workonity-primary);
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, .08)
+}
+
+.workonity-dark .workonity-card-pro-badge {
+  background: #172554;
+  border-color: #1d4ed8;
+  color: #bfdbfe
+}
+
+.workonity-shift-timeline {
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  color: #172033
+}
+
+.workonity-shift-timeline-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px
+}
+
+.workonity-shift-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px
+}
+
+.workonity-shift-timeline-grid>div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  background: #fff
+}
+
+.workonity-shift-timeline-grid small {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .035em
+}
+
+.workonity-shift-timeline-grid strong {
+  font-size: 15px;
+  color: #0f172a
+}
+
+.workonity-shift-timeline-grid span {
+  font-size: 12px;
+  color: #475569
+}
+
+.workonity-shift-timeline-error {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-color: #fecaca;
+  background: #fff7f7;
+  color: #991b1b
+}
+
+.workonity-table-subtext {
+  display: block;
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700
+}
+
+.workonity-dark .workonity-shift-timeline {
+  background: #0f1c31;
+  border-color: #355277;
+  color: #f8fafc
+}
+
+.workonity-dark .workonity-shift-timeline-grid>div {
+  background: #071221;
+  border-color: #334155
+}
+
+.workonity-dark .workonity-shift-timeline-grid strong {
+  color: #f8fafc
+}
+
+.workonity-dark .workonity-shift-timeline-grid small,
+.workonity-dark .workonity-shift-timeline-grid span,
+.workonity-dark .workonity-table-subtext {
+  color: #cbd5e1
+}
+
+.workonity-dark .workonity-shift-timeline-error {
+  background: #321419;
+  border-color: #7f1d1d;
+  color: #fecaca
+}
+
+@media(max-width:900px) {
+  .workonity-shift-timeline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media(max-width:520px) {
+  .workonity-shift-timeline {
+    padding: 13px
+  }
+
+  .workonity-shift-timeline-title {
+    align-items: flex-start;
+    flex-direction: column
+  }
+
+  .workonity-shift-timeline-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+.workonity-sidebar nav button {
+  justify-content: space-between
+}
+
+.workonity-sidebar nav button>span {
+  min-width: 0
+}
+
+.workonity-nav-locked {
+  cursor: not-allowed !important;
+  opacity: .62
+}
+
+.workonity-sidebar button.workonity-nav-locked:hover,
+.workonity-sidebar button.workonity-nav-locked:disabled {
+  background: transparent !important;
+  color: color-mix(in srgb, var(--workonity-sidebar-text, #fff) 72%, transparent) !important;
+  transform: none !important
+}
+
+.workonity-nav-locked small,
+.workonity-pro-badge {
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  padding: 2px 6px;
+  color: inherit;
+  font-size: 9px;
+  letter-spacing: .06em;
+  font-weight: 850;
+  text-transform: uppercase
+}
+
+.workonity-check-locked {
+  cursor: not-allowed;
+  opacity: .7
+}
+
+.workonity-check-locked input {
+  cursor: not-allowed
+}
+
+.workonity-check-locked .workonity-pro-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 7px;
+  border-color: color-mix(in srgb, var(--workonity-primary) 42%, var(--workonity-border));
+  background: color-mix(in srgb, var(--workonity-primary) 8%, var(--workonity-card));
+  color: var(--workonity-primary);
+  vertical-align: middle
+}
+
+.workonity-pro-gate {
+  max-width: 760px;
+  text-align: center;
+  padding: 46px 28px !important;
+  margin: 0 auto
+}
+
+.workonity-pro-gate-badge {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .05em
+}
+
+.workonity-pro-gate h2 {
+  margin: 0 0 10px !important
+}
+
+.workonity-pro-gate p {
+  max-width: 620px;
+  margin: 0 auto 22px !important
+}
+
+.workonity-dark .workonity-pro-gate-badge {
+  background: #312e81;
+  color: #e0e7ff
+}
+
+.workonity-dark .workonity-check-locked .workonity-pro-badge {
+  background: #172554;
+  border-color: #1d4ed8;
+  color: #bfdbfe
+}
+
+/* Report analysis is calculated across the full selected range, not only the
+   currently visible table page, and is reused by CSV, Excel, and PDF exports. */
+.workonity-report-analysis {
+  margin: 18px 0;
+  border: 1px solid var(--workonity-border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--workonity-card) 94%, var(--workonity-primary));
+  padding: 16px
+}
+
+.workonity-report-analysis__heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 13px
+}
+
+.workonity-report-analysis__heading>div {
+  display: grid;
+  gap: 2px
+}
+
+.workonity-report-analysis__heading span {
+  color: var(--workonity-primary);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase
+}
+
+.workonity-report-analysis__heading strong {
+  color: var(--workonity-text);
+  font-size: 16px
+}
+
+.workonity-report-analysis__heading small {
+  color: var(--workonity-muted);
+  font-size: 11px
+}
+
+.workonity-report-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 10px
+}
+
+.workonity-report-metrics article {
+  min-width: 0;
+  border: 1px solid var(--workonity-border);
+  border-radius: 14px;
+  background: var(--workonity-card);
+  padding: 12px
+}
+
+.workonity-report-metrics article>span {
+  display: block;
+  color: var(--workonity-muted);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .045em;
+  text-transform: uppercase
+}
+
+.workonity-report-metrics article>strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--workonity-text);
+  font-size: 18px;
+  line-height: 1.25;
+  overflow-wrap: anywhere
+}
+
+.workonity-report-metrics article>small {
+  display: block;
+  margin-top: 4px;
+  color: var(--workonity-muted);
+  font-size: 10px;
+  line-height: 1.35
+}
+
+.workonity-dark .workonity-report-analysis,
+.workonity-dark .workonity-report-metrics article {
+  background: #0f172a !important;
+  border-color: #334155 !important
+}
+
+@media(max-width:600px) {
+  .workonity-report-analysis {
+    padding: 13px
+  }
+
+  .workonity-report-analysis__heading {
+    align-items: flex-start;
+    flex-direction: column
+  }
+
+  .workonity-report-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  .workonity-report-metrics article>strong {
+    font-size: 15px
+  }
+}
+
+@media(max-width:400px) {
+  .workonity-report-metrics {
+    grid-template-columns: 1fr
+  }
+}
