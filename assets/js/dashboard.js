@@ -3566,7 +3566,7 @@
             className: 'workonity-weekdays'
           }, WEEKDAYS.map((day) => h(Checkbox, {
             key: day,
-            label: day,
+            label: day.charAt(0).toUpperCase() + day.slice(1),
             checked: (form.weekend_days || []).indexOf(day) !== -1,
             onChange: (checked) => toggleDay(day, checked)
           })))), h(Button, {
