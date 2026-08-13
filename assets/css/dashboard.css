@@ -543,7 +543,8 @@
   font-size: 12px !important;
   text-transform: uppercase;
   letter-spacing: .04em;
-  font-weight: 850
+  font-weight: 850;
+  white-space: nowrap;
 }
 
 .workonity-table tr:last-child td {
