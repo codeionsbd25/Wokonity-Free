@@ -320,6 +320,10 @@
   font-weight: 700;
   text-decoration: none;
 }
+.select#workonity-field-existing-wordpress-user{
+  padding: 0px !important;
+  padding-left: 16px !important;
+} 
 
 .workonity-mini-actions button:hover,
 .workonity-link-btn:hover {
