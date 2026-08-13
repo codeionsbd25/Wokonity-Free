@@ -432,9 +432,9 @@
 }
 
 #workonity-field-employee option {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1;
-    padding: 2px 6px;
+    padding: 0 6px;
 }
 .workonity-color-field {
   display: grid;
