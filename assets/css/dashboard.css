@@ -3914,7 +3914,12 @@
 
 .workonity-nav-locked {
   cursor: not-allowed !important;
-  opacity: .62
+  opacity: .62;
+  gap: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 7px !important;
 }
 
 .workonity-sidebar button.workonity-nav-locked:hover,
@@ -3922,6 +3927,11 @@
   background: transparent !important;
   color: color-mix(in srgb, var(--workonity-sidebar-text, #fff) 72%, transparent) !important;
   transform: none !important
+}
+
+.workonity-sidebar nav button.workonity-nav-locked span,
+.workonity-sidebar nav button.workonity-nav-locked small {
+    margin: 0 !important;
 }
 
 .workonity-nav-locked small,
@@ -3934,7 +3944,7 @@
   font-size: 9px;
   letter-spacing: .06em;
   font-weight: 850;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .workonity-check-locked {
