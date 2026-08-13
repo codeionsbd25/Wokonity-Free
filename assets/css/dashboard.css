@@ -2929,7 +2929,7 @@
 .workonity-dark .workonity-topbar,
 .workonity-dark .workonity-table-card,
 .workonity-dark .workonity-auth-box {
-  background: #111827 !important;
+  /* background: #111827 !important; */
   color: #f8fafc !important;
   border-color: #334155 !important
 }
