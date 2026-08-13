@@ -3198,7 +3198,7 @@
                 alt: ''
               }) : h('i', {
                 'aria-hidden': 'true'
-              }, (e.first_name || '?').charAt(0)), h('span', null, fullName(e)))), h('td', null, e.email), h(
+              }, (e.first_name || '?').charAt(0).toUpperCase()), h('span', null, fullName(e)))), h('td', null, e.email), h(
                 'td', null, e.role_name || '-'), h('td', null, e.department_name || '-'), h('td', null, e
                 .designation_name || '-'), h('td', null, h(Status, {
                 value: e.status
