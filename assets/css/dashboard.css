@@ -427,11 +427,11 @@
 .workonity-field-span {
   grid-column: 1/-1
 }
-#workonity-field-employee {
+.workonity-field select {
     font-size: 13px !important;
 }
 
-#workonity-field-employee option {
+.workonity-field select option {
     font-size: 13px;
     line-height: 1;
     padding: 0 6px;
