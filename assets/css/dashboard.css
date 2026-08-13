@@ -3056,7 +3056,12 @@
 .workonity-dark .workonity-table-pagination button {
   background: #1e293b !important;
   color: #e2e8f0 !important;
-  border-color: #475569 !important
+  border-color: #475569 !important;
+  text-decoration: none;
+}
+
+.workonity-plan-title{
+  font-size: 18px;
 }
 
 .workonity-dark .workonity-status {
