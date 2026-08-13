@@ -335,7 +335,8 @@
   cursor: pointer !important;
   box-shadow: 0 12px 22px rgba(21, 94, 239, .22) !important;
   line-height: 1.2 !important;
-  min-height: 42px
+  min-height: 42px;
+  margin-top:18px;
 }
 
 .workonity-btn:hover {
