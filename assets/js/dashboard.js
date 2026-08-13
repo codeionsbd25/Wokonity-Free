@@ -7044,7 +7044,7 @@
           }), h('div', {
             className: 'workonity-pro-plan-grid'
           }, h('article', null, h('strong',{ className: 'workonity-plan-title' }, null, 'Professional'), h('p', null,
-            'Advanced', h('strong', null,  'WORKONITY'), 'capabilities for one website: payroll, approvals, secure documents, attendance verification, exports, and more.'
+            'Advanced ', h('strong', null,  'WORKONITY '), 'capabilities for one website: payroll, approvals, secure documents, attendance verification, exports, and more.'
             )), h('article', null, h('strong',{ className: 'workonity-plan-title' },null, 'Agency'), h('p', null,
             'All Professional features for up to three websites, designed for agencies managing multiple client installations.'
             ))), WORKONITY.proActive ? null : h('a', {
