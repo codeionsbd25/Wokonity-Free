@@ -1560,7 +1560,8 @@
 .workonity-dark .workonity-check {
   background: #172337 !important;
   border-color: #3a4b63 !important;
-  color: var(--workonity-text) !important
+  color: var(--workonity-text) !important;
+  margin-bottom: 10px;
 }
 
 .workonity-dark .workonity-check:hover {
