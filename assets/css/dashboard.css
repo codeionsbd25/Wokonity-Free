@@ -4188,3 +4188,9 @@
     line-height: 1;
     min-height: 40px;
 }
+
+.workonity-sidebar nav button span {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
