@@ -4017,7 +4017,7 @@
                         alt: ''
                       }) : h('div', {
                         className: 'workonity-avatar'
-                      }, (e.first_name || '?').charAt(0)),
+                      }, (e.first_name || '?').charAt(0).toUpperCase()),
                       h('strong', null, fullName(e)),
                       h('span', null, e.designation_name || e.role_name || '-'),
                       h('small', null, e.email),
