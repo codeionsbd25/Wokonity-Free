@@ -3827,6 +3827,11 @@
   margin-bottom: 13px
 }
 
+.workonity-shift-timeline-title strong{
+  font-size: 15px;
+  font-weight: 900;
+}
+
 .workonity-shift-timeline-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
