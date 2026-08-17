@@ -299,10 +299,21 @@
 .workonity-panel-actions,
 .workonity-actions,
 .workonity-mini-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.workonity-panel-actions button,
+.workonity-actions button,
+.workonity-mini-actions button {
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .workonity-mini-actions {
