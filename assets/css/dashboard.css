@@ -4195,6 +4195,6 @@
     line-height: 1;
 }
 
-.workonity-sidebar nav button:nth-child(3) {
+.workonity-sidebar nav button:last-child {
     height: 48px;
 }
