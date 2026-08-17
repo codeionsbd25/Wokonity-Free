@@ -4181,3 +4181,10 @@
 .workonity-sidebar nav button.active {
   padding: 10px 14px;
 }
+.workonity-sidebar nav button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1;
+    min-height: 40px;
+}
