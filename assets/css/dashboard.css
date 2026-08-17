@@ -4194,3 +4194,7 @@
     align-items: center;
     line-height: 1;
 }
+
+.workonity-sidebar nav button:nth-child(3) {
+    height: 48px;
+}
