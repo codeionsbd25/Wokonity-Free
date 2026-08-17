@@ -4416,7 +4416,7 @@
             h('div', {
                 className: 'workonity-two-col'
               },
-              h('div', null,{className="PFields"},
+              h('div', null,{className:'PFields'},
                 h(Field, {
                   label: 'Select Role',
                   value: selectedId,
