@@ -4160,3 +4160,24 @@
     grid-template-columns: 1fr
   }
 }
+
+.workonity-sidebar nav {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.workonity-sidebar nav::-webkit-scrollbar {
+  display: none;
+}
+
+.workonity-sidebar nav button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.workonity-sidebar nav button.active {
+  padding: 10px 14px;
+}
