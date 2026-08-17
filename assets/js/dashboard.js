@@ -4098,7 +4098,7 @@
             alt: ''
           }) : h('div', {
             className: 'workonity-avatar'
-          }, (e.first_name || '?').charAt(0));
+          }, (e.first_name || '?').charAt(0).toUpperCase());
           const selected = detail || null;
           const stats = useMemo(() => {
             const departments = {};
