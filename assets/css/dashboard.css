@@ -821,7 +821,11 @@
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   gap: 22px
 }
-
+.PFields{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .workonity-permission-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
