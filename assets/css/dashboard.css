@@ -4196,5 +4196,5 @@
 }
 
 .workonity-sidebar nav button:last-child {
-    height: 48px;
+    height: 48px !important;
 }
