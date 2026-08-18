@@ -2309,7 +2309,7 @@
   line-height: 1.2 !important;
 }
 
-.workonity-check .checkbox{
+.workonity-check input[type="checkbox"] {
   width: 15px;
   height: 15px;
 }
