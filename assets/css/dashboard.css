@@ -2220,7 +2220,7 @@
   }
 
   .workonity-user-area .workonity-user-pill {
-    display: block
+    /* display: block */
   }
 
   .workonity-user-area .workonity-user-pill span,
@@ -4193,8 +4193,4 @@
     display: flex;
     align-items: center;
     line-height: 1;
-}
-
-.workonity-sidebar nav button:last-child {
-    height: 48px !important;
 }
