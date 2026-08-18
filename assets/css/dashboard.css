@@ -2309,9 +2309,6 @@
   line-height: 1.2 !important;
 }
 
-textarea#workonity-field-optional-note{
-  width: 239px !important;
-}
 .workonity-dark .workonity-camera-fallback {
   background: #111827 !important;
   border: 1px solid #475569;
