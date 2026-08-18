@@ -1957,22 +1957,22 @@
         }), h('div', {
           className: 'workonity-form-grid'
         }, h(Field, {
-          label: 'Request Type',
-          value: correction.request_type,
-          options: [{
-            value: 'missing_clock',
-            label: 'Missing Clock'
-          }, {
-            value: 'wrong_time',
-            label: 'Wrong Time'
-          }, {
-            value: 'other',
-            label: 'Other'
-          }],
-          onChange: (v) => setCorrection({
-            ...correction,
-            request_type: v
-          })
+                      label: 'Request Type',
+                      value: correction.request_type,
+                      options: [{
+                        value: 'missing_clock',
+                        label: 'Missing Clock'
+                      }, {
+                        value: 'wrong_time',
+                        label: 'Wrong Time'
+                      }, {
+                        value: 'other',
+                        label: 'Other'
+                      }],
+                      onChange: (v) => setCorrection({
+                        ...correction,
+                        request_type: v
+                      })
         }), h(Field, {
           label: 'Requested Clock In',
           type: 'datetime-local',
