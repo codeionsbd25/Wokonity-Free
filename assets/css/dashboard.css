@@ -129,9 +129,9 @@
   border-radius: 999px
 }
 
-.workonity-sidebar nav button:last-child {
+/* .workonity-sidebar nav button:last-child {
   margin-bottom: 8px
-}
+} */
 
 .workonity-sidebar nav button.active {
   scroll-margin-block: 12px
