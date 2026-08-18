@@ -299,21 +299,21 @@
 .workonity-panel-actions,
 .workonity-actions,
 .workonity-mini-actions {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: nowrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .workonity-panel-actions button,
 .workonity-actions button,
 .workonity-mini-actions button {
-    height: 42px;
-    padding: 0 18px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .workonity-mini-actions {
@@ -348,7 +348,7 @@
   box-shadow: 0 12px 22px rgba(21, 94, 239, .22) !important;
   line-height: 1.2 !important;
   min-height: 42px;
-  margin-top:18px;
+  margin-top: 18px;
   margin-bottom: 18px;
 }
 
@@ -371,7 +371,7 @@
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
   margin-bottom: 18px;
-  margin-top:10px ;
+  margin-top: 10px;
 }
 
 .workonity-form-grid-wide {
@@ -439,15 +439,17 @@
 .workonity-field-span {
   grid-column: 1/-1
 }
+
 .workonity-field select {
-    font-size: 13px !important;
+  font-size: 13px !important;
 }
 
 .workonity-field select option {
-    font-size: 13px;
-    line-height: 1;
-    padding: 0 6px;
+  font-size: 13px;
+  line-height: 1;
+  padding: 0 6px;
 }
+
 .workonity-color-field {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr);
@@ -832,11 +834,13 @@
   grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
   gap: 22px
 }
-.PFields{
+
+.PFields {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 .workonity-permission-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -2216,11 +2220,25 @@
 @media(max-width:420px) {
   .workonity-user-area {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
   }
 
   .workonity-user-area .workonity-user-pill {
     /* display: block */
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .workonity-theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .workonity-logout {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .workonity-user-area .workonity-user-pill span,
@@ -3091,7 +3109,7 @@
   text-decoration: none;
 }
 
-.workonity-plan-title{
+.workonity-plan-title {
   font-size: 18px;
 }
 
@@ -3842,7 +3860,7 @@
   margin-bottom: 13px
 }
 
-.workonity-shift-timeline-title strong{
+.workonity-shift-timeline-title strong {
   font-size: 15px;
   font-weight: 900;
 }
@@ -3974,7 +3992,7 @@
 
 .workonity-sidebar nav button.workonity-nav-locked span,
 .workonity-sidebar nav button.workonity-nav-locked small {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .workonity-nav-locked small,
@@ -4181,16 +4199,17 @@
 .workonity-sidebar nav button.active {
   padding: 10px 14px;
 }
+
 .workonity-sidebar nav button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    line-height: 1;
-    min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1;
+  min-height: 40px;
 }
 
 .workonity-sidebar nav button span {
-    display: flex;
-    align-items: center;
-    line-height: 1;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
