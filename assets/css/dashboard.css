@@ -2226,6 +2226,10 @@
     align-items: center;
   }
 
+  nav[aria-label="WORKONITY navigation"]>button:last-child {
+    height: 48px;
+  }
+
   .workonity-user-area .workonity-user-pill {
     grid-column: 1;
     grid-row: 1;
@@ -2245,13 +2249,13 @@
   }
 
   /* In case logout is inside a form/wrapper */
-  .workonity-user-area > form {
+  .workonity-user-area>form {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
   }
 
-  .workonity-user-area > form .workonity-logout {
+  .workonity-user-area>form .workonity-logout {
     width: 100%;
   }
 
@@ -2273,25 +2277,23 @@
 /* Keep profile data readable inside every card, regardless of theme typography. */
 
 .workonity-profile-grid {
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(220px, 100%), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(220px, 100%), 1fr));
 }
 
-.workonity-profile-grid > div {
+.workonity-profile-grid>div {
   min-width: 0;
   overflow: hidden;
   gap: 5px;
 }
 
-.workonity-profile-grid > div > strong {
+.workonity-profile-grid>div>strong {
   display: block;
   font-size: 12px !important;
   line-height: 1.35 !important;
 }
 
-.workonity-profile-grid > div > span {
+.workonity-profile-grid>div>span {
   display: block;
   max-width: 100%;
   font-size: clamp(13px, 1.1vw, 16px) !important;
@@ -2301,7 +2303,7 @@
   white-space: normal;
 }
 
-.workonity-profile-grid > div > .workonity-status {
+.workonity-profile-grid>div>.workonity-status {
   display: inline-flex;
   width: max-content;
   max-width: 100%;
@@ -2357,7 +2359,8 @@
 .workonity-check span {
   font-size: 12px;
 }
-.workonity-check span{
+
+.workonity-check span {
   font-size: 12px;
 }
 
@@ -2365,7 +2368,8 @@
   background: #111827 !important;
   border: 1px solid #475569;
 }
-.workonity-field{
+
+.workonity-field {
   padding-left: 0 !important;
 }
 
