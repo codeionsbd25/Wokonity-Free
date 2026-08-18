@@ -2312,6 +2312,9 @@
 textarea#workonity-field-optional-note{
   width: 239px !important;
 }
+.workonity-dark .workonity-camera-fallback {
+  background: #111827 !important;
+}
 
 @media(max-width:760px) {
   .workonity-profile-grid {
