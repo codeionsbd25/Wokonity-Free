@@ -2226,9 +2226,7 @@
     align-items: center;
   }
 
-  nav[aria-label="WORKONITY navigation"]>button:last-child {
-    height: 56px;
-  }
+  
 
   .workonity-user-area .workonity-user-pill {
     grid-column: 1;
@@ -4296,3 +4294,7 @@
   align-items: center;
   line-height: 1;
 }
+
+nav[aria-label="WORKONITY navigation"]>button:last-child {
+    height: 48px;
+  }
