@@ -2316,6 +2316,9 @@ textarea#workonity-field-optional-note{
   background: #111827 !important;
   border: 1px solid #475569;
 }
+.workonity-field{
+  padding-left: 0 !important;
+}
 
 @media(max-width:760px) {
   .workonity-profile-grid {
