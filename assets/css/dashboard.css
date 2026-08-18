@@ -2310,10 +2310,39 @@
 }
 
 .workonity-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
   width: 15px;
   height: 15px;
+
+  border: 1px solid #94a3b8;
+  border-radius: 3px;
+
+  position: relative;
+  cursor: pointer;
 }
 
+.workonity-check input[type="checkbox"]:checked {
+  background: #0f59ff;
+  border-color: #0f59ff;
+}
+
+.workonity-check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+
+  width: 4px;
+  height: 7px;
+
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+
+  transform: rotate(45deg);
+
+  left: 4px;
+  top: 2px;
+}
 .workonity-check span{
   font-size: 12px;
 }
