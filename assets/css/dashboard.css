@@ -2313,8 +2313,12 @@
   appearance: none !important;
   -webkit-appearance: none !important;
 
-  width: 15px;
-  height: 15px;
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 
   border: 1px solid #94a3b8;
   border-radius: 3px;
@@ -2324,9 +2328,14 @@
   cursor: pointer;
 }
 
+.workonity-check input[type="checkbox"]::before {
+  content: none !important;
+  display: none !important;
+}
+
 .workonity-check input[type="checkbox"]:checked {
-  background: #0f59ff;
-  border-color: #0f59ff;
+  background: #0f59ff !important;
+  border-color: #0f59ff !important;
 }
 
 .workonity-check input[type="checkbox"]:checked::after {
@@ -2339,10 +2348,14 @@
   border: solid #fff;
   border-width: 0 1.5px 1.5px 0;
 
-  transform: rotate(45deg);
+  left: 4px;
+  top: 2px;
 
-  left: 4.5px;
-  top: 2.5px;
+  transform: rotate(45deg);
+}
+
+.workonity-check span {
+  font-size: 12px;
 }
 .workonity-check span{
   font-size: 12px;
