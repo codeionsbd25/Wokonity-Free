@@ -2309,6 +2309,15 @@
   line-height: 1.2 !important;
 }
 
+.workonity-check .checkbox{
+  width: 15px;
+  height: 15px;
+}
+
+.workonity-check span{
+  font-size: 12px;
+}
+
 .workonity-dark .workonity-camera-fallback {
   background: #111827 !important;
   border: 1px solid #475569;
