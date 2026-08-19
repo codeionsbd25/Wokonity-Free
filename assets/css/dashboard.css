@@ -1766,12 +1766,13 @@
 @media(max-width:960px) {
 
   .workonity-user-area {
+    display: flex;
 
     max-width: 100%;
 
     justify-content: flex-start;
 
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
     margin-top: 12px
   }
@@ -1779,13 +1780,14 @@
   .workonity-user-area .workonity-user-pill {
 
     order: -1;
+    width: 30%;
 
-    flex: 1 1 100%
+    /* flex: 1 1 100% */
   }
 
   .workonity-theme-toggle,
   .workonity-logout {
-
+    width: 30%;
     flex: 1 1 auto
   }
 
@@ -2173,7 +2175,7 @@
   .workonity-user-area {
     width: 100%;
     max-width: 100%;
-    justify-content: stretch;
+    justify-content: space-between;
     margin-top: 12px
   }
 
