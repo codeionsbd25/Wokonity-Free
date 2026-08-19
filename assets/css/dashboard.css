@@ -1782,6 +1782,66 @@
   }
 }
 
+/* Tablet: keep Attendance Date / From / To readable */
+@media (min-width: 721px) and (max-width: 960px) {
+
+    .workonity-table-date-filters fieldset {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(160px, 1fr)) !important;
+        column-gap: 14px !important;
+        row-gap: 6px !important;
+
+        width: 100% !important;
+        min-width: 340px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    .workonity-table-date-filters legend {
+        grid-column: 1 / -1 !important;
+
+        width: 100% !important;
+        margin: 0 0 4px !important;
+
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+    }
+
+    .workonity-table-date-filters label {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        gap: 6px !important;
+
+        white-space: nowrap !important;
+    }
+
+    .workonity-table-date-filters label > span {
+        display: block !important;
+
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+    }
+
+    .workonity-table-date-filters input[type="date"] {
+        width: 100% !important;
+        min-width: 160px !important;
+        max-width: none !important;
+
+        min-height: 44px !important;
+    }
+
+    .workonity-table-date-filters fieldset {
+        grid-column: span 2 !important;
+    }
+}
+
 .workonity-logout {
   display: inline-flex;
   align-items: center;
