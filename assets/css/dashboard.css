@@ -1763,40 +1763,25 @@
   margin: -10px 0 12px !important
 }
 
-@media (min-width: 769px) and (max-width: 960px) {
+@media(max-width:960px) {
+  .workonity-user-area {
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 12px
+  }
 
-    .workonity-user-area {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        flex-wrap: nowrap;
-    }
+  .workonity-user-area .workonity-user-pill {
+    order: -1;
+    flex: 1 1 100%
+  }
 
-    .workonity-user-pill {
-        width: 100% !important;
-        max-width: 100% !important;
+  .workonity-theme-toggle,
+  .workonity-logout {
+    flex: 1 1 auto
+  }
+}
 
-        /* Keep text away from the buttons */
-        padding-right: 220px !important;
-    }
-
-    .workonity-theme-toggle,
-    .workonity-logout {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto !important;
-        margin: 0 !important;
-    }
-
-    .workonity-logout {
-        right: 10px;
-    }
-
-    .workonity-theme-toggle {
-        right: 100px;
-    }
-} 
 /* Tablet: keep Attendance Date / From / To readable */
 @media (min-width: 721px) and (max-width: 960px) {
 
