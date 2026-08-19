@@ -1763,64 +1763,22 @@
   margin: -10px 0 12px !important
 }
 
-@media (min-width: 769px) and (max-width: 960px) {
-
-  .workonity-topbar {
-    display: block;
-    padding: 18px;
-  }
-
+@media(max-width:960px) {
   .workonity-user-area {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: nowrap !important;
-
-    gap: 12px !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin-top: 14px !important;
-  }
-
-  .workonity-theme-toggle {
-    flex: 0 0 auto !important;
-    width: auto !important;
-    min-width: 114px;
-    white-space: nowrap !important;
-    min-height: 42px;
-    padding: 8px 16px;
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 12px
   }
 
   .workonity-user-area .workonity-user-pill {
-    flex: 1 1 auto !important;
-
-    width: auto !important;
-    max-width: none !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-
-    white-space: nowrap !important;
-
-    justify-content: flex-start;
-    min-height: 42px;
-    padding: 9px 16px;
+    order: -1;
+    flex: 1 1 100%
   }
 
-  .workonity-user-area .workonity-user-pill span,
-  .workonity-user-area .workonity-user-pill strong {
-    white-space: nowrap !important;
-  }
-
+  .workonity-theme-toggle,
   .workonity-logout {
-    flex: 0 0 auto !important;
-    width: auto !important;
-    min-width: 88px;
-    white-space: nowrap !important;
-    min-height: 42px;
-    padding: 8px 16px;
+    flex: 1 1 auto
   }
 }
 
@@ -2268,7 +2226,7 @@
     align-items: center;
   }
 
-
+  
 
   .workonity-user-area .workonity-user-pill {
     grid-column: 1;
@@ -4338,5 +4296,5 @@
 }
 
 nav[aria-label="WORKONITY navigation"]>button:last-child {
-  height: 48px;
-}
+    height: 48px;
+  }
