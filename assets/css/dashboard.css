@@ -1763,37 +1763,38 @@
   margin: -10px 0 12px !important
 }
 
-@media (max-width: 960px) {
+@media (min-width: 769px) and (max-width: 960px) {
 
   .workonity-user-area {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    width: 100%;
     max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 12px;
     margin-top: 12px;
   }
 
-  .workonity-user-area .workonity-user-pill {
-    order: 1;
-    flex: 1 1 auto;
+  .workonity-user-area>.workonity-user-pill {
+    order: 1 !important;
+    flex: 1 1 auto !important;
     min-width: 0;
   }
 
-  .workonity-theme-toggle {
-    order: 2;
-    flex: 0 0 auto;
-    width: auto;
+  .workonity-user-area>.workonity-theme-toggle {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
     white-space: nowrap;
     min-height: 40px;
     padding: 8px 16px;
   }
 
-  .workonity-logout {
-    order: 3;
-    flex: 0 0 auto;
-    width: auto;
+  .workonity-user-area>.workonity-logout {
+    order: 3 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
     white-space: nowrap;
     min-height: 40px;
     padding: 8px 14px;
