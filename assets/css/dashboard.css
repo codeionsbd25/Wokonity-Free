@@ -1763,7 +1763,8 @@
   margin: -10px 0 12px !important
 }
 
-@media(max-width:960px) {
+@media (max-width: 960px) {
+
   .workonity-user-area {
     max-width: 100%;
     display: flex;
@@ -1775,24 +1776,25 @@
   }
 
   .workonity-user-area .workonity-user-pill {
-    order: 0;
+    order: 1;
     flex: 1 1 auto;
     min-width: 0;
   }
 
-  .workonity-theme-toggle,
-  .workonity-logout {
+  .workonity-theme-toggle {
+    order: 2;
     flex: 0 0 auto;
     width: auto;
     white-space: nowrap;
-  }
-       
-  .workonity-theme-toggle {
     min-height: 40px;
     padding: 8px 16px;
   }
 
   .workonity-logout {
+    order: 3;
+    flex: 0 0 auto;
+    width: auto;
+    white-space: nowrap;
     min-height: 40px;
     padding: 8px 14px;
   }
