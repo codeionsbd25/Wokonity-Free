@@ -1773,19 +1773,27 @@
   .workonity-user-area {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: space-between !important;
     flex-wrap: nowrap !important;
+
     gap: 12px !important;
 
     width: 100% !important;
     max-width: 100% !important;
 
-    margin-top: 16px !important;
+    margin-top: 14px !important;
   }
 
-  .workonity-user-area>.workonity-user-pill {
-    order: 1 !important;
+  .workonity-theme-toggle {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 114px;
+    white-space: nowrap !important;
+    min-height: 42px;
+    padding: 8px 16px;
+  }
 
+  .workonity-user-area .workonity-user-pill {
     flex: 1 1 auto !important;
 
     width: auto !important;
@@ -1793,34 +1801,26 @@
     min-width: 0 !important;
 
     margin: 0 !important;
-  }
-
-  .workonity-user-area>.workonity-theme-toggle {
-    order: 2 !important;
-
-    flex: 0 0 auto !important;
-
-    width: auto !important;
-    min-width: auto !important;
 
     white-space: nowrap !important;
 
-    min-height: 40px;
+    justify-content: flex-start;
+    min-height: 42px;
+    padding: 9px 16px;
+  }
+
+  .workonity-user-area .workonity-user-pill span,
+  .workonity-user-area .workonity-user-pill strong {
+    white-space: nowrap !important;
+  }
+
+  .workonity-logout {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 88px;
+    white-space: nowrap !important;
+    min-height: 42px;
     padding: 8px 16px;
-  }
-
-  .workonity-user-area>.workonity-logout {
-    order: 3 !important;
-
-    flex: 0 0 auto !important;
-
-    width: auto !important;
-    min-width: auto !important;
-
-    white-space: nowrap !important;
-
-    min-height: 40px;
-    padding: 8px 14px;
   }
 }
 
