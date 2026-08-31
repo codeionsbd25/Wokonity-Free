@@ -10,10 +10,6 @@
   --workonity-shadow: 0 18px 50px rgba(7, 26, 61, .08)
 }
 
-*{
-  background: pink   ;
-}
-
 #workonity-root,
 .workonity-root {
   width: 100%;
