@@ -155,14 +155,38 @@ final class WORKONITY_Core_Extended {
 		if ( is_wp_error( $attachment_id ) ) {
 			return $attachment_id;
 		}
-		$updated = $wpdb->update(
-			self::table( 'employees' ),
-			array(
-				'profile_image_id' => $attachment_id,
-				'updated_at'       => current_time( 'mysql' ),
-			),
-			array( 'id' => (int) $employee->id )
-		);
+		$updated = $updated = $wpdb->update(
+    self::table( 'employees' ),
+    array(
+        'profile_image_id' => $attachment_id,
+        'updated_at'       => current_time( 'mysql' ),
+    ),
+    array(
+        'id' => $id,
+    ),
+    array(
+        '%d',
+        '%s',
+    ),
+    array(
+        '%d',
+    )
+);
+
+if ( false === $updated ) {
+
+    // Avoid leaving an unused image in the Media Library.
+    wp_delete_attachment( $attachment_id, true );
+
+    return new WP_Error(
+        'workonity_photo_save_failed',
+        'The profile image was uploaded but could not be saved to the employee profile.',
+        array(
+            'status'   => 500,
+            'database' => $wpdb->last_error,
+        )
+    );
+}
 		if ( false === $updated ) {
 			wp_delete_attachment( $attachment_id, true );
 			return new WP_Error( 'workonity_photo_save_failed', 'The profile image could not be attached to this employee.', array( 'status' => 500 ) );
