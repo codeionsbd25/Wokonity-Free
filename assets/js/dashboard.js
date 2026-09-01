@@ -1949,58 +1949,106 @@
             disabled: loading || ['completed', 'pending_remote'].includes(next)
           }, actionLabel())))
         )) : null,
-        hasAny(perms, ['attendance.correct', 'attendance.manage']) ? h('section', {
-          className: 'workonity-panel workonity-card-locked-content'
-        }, h(PanelTitle, {
-          title: 'Attendance Correction',
-          text: 'Employees can request missing/incorrect clock-in or clock-out corrections. HR/Admin can approve and all actions are audited.'
-        }), h('div', {
-          className: 'workonity-form-grid'
-        }, h(Field, {
-          label: 'Request Type',
-          value: correction.request_type,
-          options: [{
-            value: 'missing_clock',
-            label: 'Missing Clock'
-          }, {
-            value: 'wrong_time',
-            label: 'Wrong Time'
-          }, {
-            value: 'other',
-            label: 'Other'
-          }],
-          onChange: (v) => setCorrection({
-            ...correction,
-            request_type: v
-          })
-        }), h(Field, {
-          label: 'Requested Clock In',
-          type: 'datetime-local',
-          value: correction.requested_clock_in,
-          onChange: (v) => setCorrection({
-            ...correction,
-            requested_clock_in: v
-          })
-        }), h(Field, {
-          label: 'Requested Clock Out',
-          type: 'datetime-local',
-          value: correction.requested_clock_out,
-          onChange: (v) => setCorrection({
-            ...correction,
-            requested_clock_out: v
-          })
-        }), h(Field, {
-          label: 'Reason',
-          type: 'textarea',
-          value: correction.reason,
-          onChange: (v) => setCorrection({
-            ...correction,
-            reason: v
-          }),
-          className: 'workonity-field-span'
-        })), h(Button, {
-          onClick: submitCorrection
-        }, 'Submit Correction Request')) : null,
+       hasAny(perms, ['attendance.correct', 'attendance.manage']) ? h('section', {
+    className: [
+        'workonity-panel',
+        !hasProFeature('attendance_correction')
+            ? 'workonity-panel--pro-locked'
+            : ''
+    ].filter(Boolean).join(' ')
+},
+
+    // Heading stays visible
+    h('div', {
+        className: 'workonity-panel-title-row'
+    },
+
+        h(PanelTitle, {
+            title: 'Attendance Correction'
+        }),
+
+        !hasProFeature('attendance_correction') ? h('span', {
+            className: 'workonity-card-pro-badge'
+        }, 'Pro') : null
+    ),
+
+    // Everything below heading becomes blurred
+    h('div', {
+        className: !hasProFeature('attendance_correction')
+            ? 'workonity-panel-locked-content'
+            : ''
+    },
+
+        h('div', {
+            className: 'workonity-panel-description'
+        }, 'Employees can request missing/incorrect clock-in or clock-out corrections. HR/Admin can approve and all actions are audited.'),
+
+        h('div', {
+            className: 'workonity-form-grid'
+        },
+
+            h(Field, {
+                label: 'Request Type',
+                value: correction.request_type,
+                options: [
+                    {
+                        value: 'missing_clock',
+                        label: 'Missing Clock'
+                    },
+                    {
+                        value: 'wrong_time',
+                        label: 'Wrong Time'
+                    },
+                    {
+                        value: 'other',
+                        label: 'Other'
+                    }
+                ],
+                onChange: (v) => setCorrection({
+                    ...correction,
+                    request_type: v
+                })
+            }),
+
+            h(Field, {
+                label: 'Requested Clock In',
+                type: 'datetime-local',
+                value: correction.requested_clock_in,
+                onChange: (v) => setCorrection({
+                    ...correction,
+                    requested_clock_in: v
+                })
+            }),
+
+            h(Field, {
+                label: 'Requested Clock Out',
+                type: 'datetime-local',
+                value: correction.requested_clock_out,
+                onChange: (v) => setCorrection({
+                    ...correction,
+                    requested_clock_out: v
+                })
+            }),
+
+            h(Field, {
+                label: 'Reason',
+                type: 'textarea',
+                value: correction.reason,
+                onChange: (v) => setCorrection({
+                    ...correction,
+                    reason: v
+                }),
+                className: 'workonity-field-span'
+            })
+        ),
+
+        h(Button, {
+            onClick: submitCorrection,
+            disabled: !hasProFeature('attendance_correction')
+        }, 'Submit Correction Request')
+    )
+
+) : null,
         hasAny(perms, ['attendance.manage', 'attendance.manual']) ? h('section', {
           className: 'workonity-panel'
         }, h(PanelTitle, {
