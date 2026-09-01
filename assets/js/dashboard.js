@@ -1950,7 +1950,7 @@
           }, actionLabel())))
         )) : null,
         hasAny(perms, ['attendance.correct', 'attendance.manage']) ? h('section', {
-          className: 'workonity-panel'
+          className: 'workonity-panel workonity-card-locked-content'
         }, h(PanelTitle, {
           title: 'Attendance Correction',
           text: 'Employees can request missing/incorrect clock-in or clock-out corrections. HR/Admin can approve and all actions are audited.'
