@@ -1952,7 +1952,7 @@
        hasAny(perms, ['attendance.correct', 'attendance.manage']) ? h('section', {
     className: [
         'workonity-panel',
-        !hasProFeature('attendance_correction')
+        !hasProFeature('attendance_verification')
             ? 'workonity-panel--pro-locked'
             : ''
     ].filter(Boolean).join(' ')
@@ -1967,14 +1967,14 @@
             title: 'Attendance Correction'
         }),
 
-        !hasProFeature('attendance_correction') ? h('span', {
+        !hasProFeature('attendance_verification') ? h('span', {
             className: 'workonity-card-pro-badge'
         }, 'Pro') : null
     ),
 
     // Everything below heading becomes blurred
     h('div', {
-        className: !hasProFeature('attendance_correction')
+        className: !hasProFeature('attendance_verification')
             ? 'workonity-panel-locked-content'
             : ''
     },
@@ -2044,7 +2044,7 @@
 
         h(Button, {
             onClick: submitCorrection,
-            disabled: !hasProFeature('attendance_correction')
+            disabled: !hasProFeature('attendance_verification')
         }, 'Submit Correction Request')
     )
 
